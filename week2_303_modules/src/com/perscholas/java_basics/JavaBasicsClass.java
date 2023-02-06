@@ -1,6 +1,8 @@
 package com.perscholas.java_basics;
 
 /*
+ * JD Module 303.1 - Practice Assignment - Core Java Practice
+ * 
  * 1 Write a program that declares 2 integer variables, assigns an integer to each, and adds them together. Assign the sum to a variable. Print out the result.
  
 2 Write a program that declares 2 double variables, assigns a number to each, and adds them together. Assign the sum to a variable. Print out the result.
@@ -38,7 +40,7 @@ public class JavaBasicsClass {
 
 		double taskFiveResult = dblVariableTwo / dblVariableOne;
 		int taskFiveInt = (int) taskFiveResult;
-		
+
 		int x = 5;
 		int y = 6;
 		double q = y / x;
@@ -52,7 +54,7 @@ public class JavaBasicsClass {
 		double subtotal = 0;
 		final double SALES_TAX = 0.10;
 		double totalSale = 0;
-		
+
 		// task 1
 		System.out.println("task 1: " + intVariableSum);
 
@@ -74,11 +76,12 @@ public class JavaBasicsClass {
 
 		// task 5
 		System.out.println("task 5: " + taskFiveResult);
-		
-		// this conversion was easier as it was stepping down from double to int rather than up
+
+		// this conversion was easier as it was stepping down from double to int rather
+		// than up
 		// as a result, the results comes back without error
 		System.out.println(taskFiveInt);
-		
+
 		// task 6 (shown in class)
 		// because we did not cast the integers to a double we lost the precision
 		System.out.println("task 6: " + q);
@@ -92,20 +95,21 @@ public class JavaBasicsClass {
 		// by casting y to a double we change it from the whole number 6 to a fractional
 		// number 6.0
 		System.out.println(q);
-		
+
 		// task 7
 		System.out.println("task 7: " + "The Constant: " + intConstant);
 		System.out.println("Constant + 23 = " + taskSevenResult);
-		
+
 		// task 8
 		// problems i ran into: variable placement/variable order
-		// because i initialized subtotal to = 0 and didn't have totalSale to update along with subtotal in the task
-		// the total sale was not being calulated properly
+		// because i initialized subtotal to = 0 and didn't have totalSale to update
+		// along with subtotal in the task
+		// the total sale was not being calculated properly
 		subtotal = ((bagel * 3) + (tea * 4) + (coffee * 2));
 		totalSale = subtotal + (subtotal * SALES_TAX);
-		System.out.printf("task 8: " + "Your subtotal amounts to: " + "%,.2f \n",subtotal);
-		System.out.printf("Your sales tax is: " + "%,.2f\n",(subtotal * SALES_TAX));
-		System.out.printf("Your Grand Total is: " + "%,.2f\n",totalSale);
+		System.out.printf("task 8: " + "Your subtotal amounts to: " + "%,.2f \n", subtotal);
+		System.out.printf("Your sales tax is: " + "%,.2f\n", (subtotal * SALES_TAX));
+		System.out.printf("Your Grand Total is: " + "%,.2f\n", totalSale);
 
 	}
 
