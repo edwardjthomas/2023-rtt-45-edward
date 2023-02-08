@@ -1,0 +1,22 @@
+303.3.1. 
+Iteration Statements
+(Loops) -
+https://docs.google.com/presentation/d/1iKcDc1KUjaXhq8ttYo0RZZ7srtX5XoC9qrbZylFhRIQ/edit?usp=embed_facebook
+
+303.3.2  - Java Arrays -
+https://docs.google.com/presentation/d/1GYLOUMh7MbmR8tiEkBTHLIf-0kr7JtTnmbFzaPOK0IQ/edit#slide=id.p1
+
+303.4.1 - Array Processing and Manipulation -
+https://docs.google.com/presentation/d/1NceUXlH2071QHOfdyaYtBWwrC0DrBpB1TS7dwuQifbo/edit#slide=id.p1
+
+303.4.2 - 303.5.1
+Java Classes, Methods, Constructors, Objects,
+Access Modifiers, and Overloading
+
+Reusable Units of Work -
+https://docs.google.com/presentation/d/1z3DWrJF71TguiPtrNctvKw4B2ab5LgRE2GjsbXtkzOY/edit#slide=id.p1
+
+303.5.2 
+Object-Oriented Programming
+Java - Encapsulation Inheritance -
+https://docs.google.com/presentation/d/1iKcDc1KUjaXhq8ttYo0RZZ7srtX5XoC9qrbZylFhRIQ/edit#slide=id.p1
