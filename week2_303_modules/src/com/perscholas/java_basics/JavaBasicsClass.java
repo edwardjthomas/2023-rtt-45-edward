@@ -1,6 +1,7 @@
 package com.perscholas.java_basics;
 
-/*
+/* 303.1.2
+ * 
  * JD Module 303.1 - Practice Assignment - Core Java - Variables - Edward Thomas Jr. 2/6/2023
  * 
  * 1 Write a program that declares 2 integer variables, assigns an integer to each, and adds them together. Assign the sum to a variable. Print out the result.
