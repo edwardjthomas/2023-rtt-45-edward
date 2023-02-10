@@ -11,11 +11,11 @@ public class MenuItem {
 	// are defined in
 	private String name = "";
 	private double price = 0;
-	
-	// exercise: creating and adding quantity in stock as a variable
-	// which takes us across the entire program between MenuItem.java and CoffeeShop.java
-	private int quantityInStock = 0;
 
+	// exercise: creating and adding quantity in stock as a variable
+	// which takes us across the entire program between MenuItem.java and
+	// CoffeeShop.java
+	private int quantityInStock = 0;
 
 	// remember that these are called methods in java
 	public String getName() {
@@ -33,7 +33,7 @@ public class MenuItem {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
+
 	public int getQuantityInStock() {
 		return quantityInStock;
 	}
@@ -41,7 +41,6 @@ public class MenuItem {
 	public void setQuantityInStock(int quantityInStock) {
 		this.quantityInStock = quantityInStock;
 	}
-
 
 	// this is a constructor
 	// the constructor does not have a return type
@@ -65,6 +64,5 @@ public class MenuItem {
 		this.price = price;
 		this.quantityInStock = quantityInStock;
 	}
-
 
 }
