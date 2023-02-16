@@ -1,4 +1,4 @@
-package com.java.day3;
+package javaHomeWork.Loops;
 
 /* 303.3.1
 Question 1: Print a Multiplication Table
@@ -33,8 +33,21 @@ In how many years will the tuition be doubled?
 public class Loops {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		// task 1
+		int multiple1 = 0;
+		int multiple2 = 0;
+		for (multiple1 = 1; multiple1 <= 12; ++multiple1) {
+			for (multiple2 = 1; multiple2 <= 12; ++multiple2) {
+				System.out.printf("%4d", multiple1 * multiple2);
+			}
+			System.out.println();
+		}
 	}
 
+		// task 2
+		int n1 = 16;
+		int n2 = 24;
+		
+		
+	
 }

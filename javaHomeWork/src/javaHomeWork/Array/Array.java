@@ -1,4 +1,4 @@
-package com.java.day3;
+package javaHomeWork.Array;
 
 /* 303.3.2
 Write a program that creates an array of integers with a length of 3. Assign the values 1, 2, and 3 to the indexes. Print out each array element.

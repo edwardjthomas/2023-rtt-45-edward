@@ -27,7 +27,21 @@ public class SortingExamples {
 		// a comparator implements a custom sort.
 		numbers.sort(Comparator.reverseOrder());
 		System.out.println("Reverse : " + numbers);
-
+		
+	}
+	
+	
+	// you could put this in it's own file but, it would make it harder to read
+	class NumberCamparitor<Integer> implements Comparator <Integer> {
+		// comparator returns 3 values
+		// if o1 < o2 then return -1
+		// if o1 == o2 then return 0
+		// if o1 > o2 then return 1
+		
+		@Override
+		public int compare(Integer o1, Integer o2) {
+			return 0;
+		}
 	}
 
 }

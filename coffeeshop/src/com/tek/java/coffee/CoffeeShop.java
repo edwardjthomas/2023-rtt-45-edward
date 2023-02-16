@@ -2,6 +2,8 @@ package com.tek.java.coffee;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -17,7 +19,7 @@ public class CoffeeShop {
 	// this is also a member variable that is private to this class
 	// this variable IS accessible by everything in the class
 	// look for decimalformat to see the opposite (example of scoping)
-	private List<MenuItem> menuItems = new ArrayList<>();
+	private List<MenuItem> menuItems = new LinkedList<>();
 
 	// this will create a cart for the customer's order
 	private List<MenuItem> cart = new ArrayList<>();
@@ -39,22 +41,44 @@ public class CoffeeShop {
 
 		MenuItem item2 = new MenuItem();
 		item2.setName("Large Coffee");
-		item2.setPrice(5.99);
+		item2.setPrice(7.99);
 		item2.setQuantityInStock(60);
 
 		menuItems.add(item2);
 
 		// this creates a new menu item using the constructor from MenuItem.java
-		MenuItem item3 = new MenuItem("Small Cookie", 9.99, 12);
+		MenuItem item3 = new MenuItem("Small Cookie", 5.99, 12);
 		menuItems.add(item3);
 
 		// make your own constructor to see how it works
-		MenuItem item4 = new MenuItem("Bagel", 4.99, 6);
+		MenuItem item4 = new MenuItem("Bagel Borgar", 4.99, 6);
 		menuItems.add(item4);
 
 		// we can compress the menuItem to 1 line of code
 		// same as above but we are doing it in 1 line of code
 		menuItems.add(new MenuItem("Egg Sandwich", 14.30, 7));
+
+		// anonymous code block
+		// it's all within the sort's parenthesis '()'
+		// i should be getting clarification on it upon return
+		// takes the argument and can make a new comparator
+		// it's essentially a class within a method called
+
+		// Comparator here is an interface
+		menuItems.sort( // this is the sort function being called on the menuItems list itself
+				new Comparator<MenuItem>() { // this is an anonymous block that creates a new comparator
+
+					@Override // we can not instantiate an interface so we must provide the implementation for
+								// that interface
+					public int compare(MenuItem o1, MenuItem o2) { // right here in line
+						Double p1 = o1.getPrice(); // these lines are implementing the sorting logic.
+						Double p2 = o2.getPrice();
+
+						return p1.compareTo(p2);
+					} // this is the closing bracket for the compare method.
+
+				} // this is the closing curly bracket for the comparator implementation
+		); // this is the closing parenthesis for the .sort method
 
 	}
 
