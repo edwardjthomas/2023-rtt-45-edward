@@ -8,8 +8,20 @@ public class ArrayLibrary {
 		System.out.println(message + "\t = " + Arrays.toString(arr));
 	}
 
-	public int[] insertElement(int[] arr, int position, int value) {
-//		// create new array
+	public int[] insertElement(int[] arr, int position, int value) throws Exception, PositionTooLargeException, NegativePositionException {
+		// first thing's first when you enter a function is to test your inputs
+		if (position < 0) {
+			throw new NegativePositionException("Position must be greater than 0");
+		}
+		
+//		if (position >= arr.length ) {
+//			throw new Exception("Position must be less than " + arr.length);
+//		}
+		if (position >= arr.length ) {
+			throw new PositionTooLargeException("Position must be less than " + arr.length);
+		}
+		
+		//		// create new array
 //		int[] copy = new int[arr.length + 1];
 //
 //		// copy all elements from arr into the new copy
@@ -112,7 +124,7 @@ public class ArrayLibrary {
 
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] == value) {
-				position = i;
+				position = i + 1;
 				break;
 			}
 		}
