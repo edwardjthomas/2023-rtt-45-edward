@@ -1,5 +1,8 @@
 package javaHomeWork.Array;
 
+import java.util.Arrays;
+import java.util.Scanner; 
+
 /* 303.3.2
 Write a program that creates an array of integers with a length of 3. Assign the values 1, 2, and 3 to the indexes. Print out each array element.
 
@@ -46,7 +49,77 @@ phone tv xbox wine beer sofa book
 public class Array {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
+		// task 1
+		int arr[] = { 1, 2, 3 };
+		for (int i = 0; i < arr.length; i++) {
+			System.out.println("task1: " + arr[i]);
+		}
+
+		// task 2
+		int arr2[] = { 13, 5, 7, 68, 2 };
+		System.out.println("task2: " + arr2[arr2.length / 2]);
+
+		// task 3
+		String arr3[] = { "red", "green", "blue", "yellow" };
+		System.out.println("task3: " + arr3.length);
+		String arr3Copy[] = arr3.clone();
+		System.out.println("task3: " + Arrays.toString(arr3Copy));
+
+		// task 4
+		int arr4[] = { 2, 4, 6, 8, 10 };
+		System.out.println("task4: " + arr4[0]);
+		System.out.println("task4: " + arr4[arr4.length-1]);
+		
+		// task 5
+		int arr5[] = { 2, 4, 6, 8, 10 };
+		for (int i = 0; i < arr5.length; i++) {
+			arr5[i] = i;
+			System.out.println("task5: " + arr5[i]);
+		}
+
+		// task 6
+		int arr6[] = { 2, 4, 6, 8, 10 };
+		for (int i = 0; i < arr6.length; i++) {
+			arr6[i] = i * 2;
+			System.out.println("task6: " + arr6[i]);
+		}
+		
+		// task 7
+		int arr7[] = { 2, 4, 6, 8, 10 };
+		System.out.println("task7: " + Arrays.toString(arr7));
+		int temp = arr7[arr7.length/2];
+		arr7[arr7.length/2] = arr7[0];
+		arr7[0] = temp;
+		System.out.println("task7: " + Arrays.toString(arr7));
+
+		// task 8
+		int arr8[] = { 4, 2, 9, 13, 1, 0 };
+		Arrays.sort(arr8);
+		System.out.println("task8: " + Arrays.toString(arr8));
+		System.out.println("task8: Smallest number is " + arr8[0]);
+		System.out.println("task8: Biggest number is " + arr8[arr8.length-1]);
+		
+		// task 9
+		Object arr9[] = {8, "hi", "hello", "hey", 5.0};
+		System.out.println("task9: " + Arrays.toString(arr9));
+
+		// task 10
+		Scanner task10input = new Scanner(System.in); // make the scanner
+		System.out.println("task10: How many favorite things? ");
+		
+		Integer favThingsCount = task10input.nextInt(); // user puts in number
+		task10input.nextLine();
+
+		String arr10[] = new String[favThingsCount];
+		for (int i = 0; i < arr10.length; ++i) {
+			System.out.println("task10: what's your favorite thing for " + i + "?");
+			arr10[i] = task10input.nextLine();
+		}
+		
+		System.out.println("task10: your favorite things are :" + Arrays.toString(arr10));
+		
+
 
 	}
 
