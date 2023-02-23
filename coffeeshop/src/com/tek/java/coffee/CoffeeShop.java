@@ -80,6 +80,12 @@ public class CoffeeShop {
 				} // this is the closing curly bracket for the comparator implementation
 		); // this is the closing parenthesis for the .sort method
 
+		// thing on lambdas
+		// what was up above is now a single line of code that uses a java stream to sort by price
+		// notice the :: notation in the syntax
+		// the elements in the list are of time MenuItem and we are sorting by the getPrice method / field
+		// how to find this is to google for "java stream sort object by field"
+		menuItems.sort(Comparator.comparing(MenuItem::getPrice));
 	}
 
 	public void printMenuItems() {

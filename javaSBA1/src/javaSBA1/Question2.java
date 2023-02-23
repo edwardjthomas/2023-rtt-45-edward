@@ -6,17 +6,18 @@ public class Question2 {
 	// one is cricket / one is football
 	// football is gonna need something cricket ain't got
 	// inheritance?
-	
+
 	// actual implementation of some of these lines are only two or four
-	
+
 	// question 2 also has an interface
 	// obfuscate something about a array?
 
 	// position : 0 1 2 3 4 5
 	// values : a b c d e f
 
-	// assume that the array is already initialized and is filled with -1 or whatever that means
-	
+	// assume that the array is already initialized and is filled with -1 or
+	// whatever that means
+
 	// we lack a harness to run all of these functions
 	// does that mean for us to creating something that can trigger said methods?
 
@@ -24,30 +25,39 @@ public class Question2 {
 	private static final int ARRAY_SIZE = 5;
 
 	private int[] array;
+	
+	public class cricket {
+		
+	}
+	
+	public class football {
+		
+	}
 
 	public static void main(String[] args) {
 		Question2 q2 = new Question2();
-		
-		// initialize this entire array to a value ... -1 (last placement i thought it was at)
+
+		// initialize this entire array to a value ... -1 (last placement i thought it
+		// was at)
 		// we could make a for loop down to set the position -1
 		int[] avg = { 1, 2, 3, 4, 5, 6, 7 };
 		q2.calculateAverage(avg);
-		
+
 		q2.setValue(4);
 		// print first message value
-		
+
 		q2.setValue(5);
 		// print first message value
-		
+
 		q2.setValue(4);
 		// print 2nd message because its already been changed
-		
+
 		q2.move(50, 3);
 		// print first message
-		
+
 		q2.move(30, 3);
 		// print 2nd message
-		
+
 		q2.move(30, 4);
 		// print 2nd message
 	}
@@ -59,14 +69,13 @@ public class Question2 {
 		// going from 1to5)
 		// it gotta be six total size array
 
-		
-		// *********************************** THIS IS IMPORTANT TO ADD 1 to what ever they give you or it will array index out of bound
-		
+		// *********************************** THIS IS IMPORTANT TO ADD 1 to what ever
+		// they give you or it will array index out of bound
+
 		// the key to this is to ignore the 0th element of the array
 		int[] arr = new int[ARRAY_SIZE + 1];
 
 		// initialize this entire array to a value ... -1 (placement eric put it)
-
 
 	}
 
@@ -78,20 +87,45 @@ public class Question2 {
 		// print out a message using system.out.format of the average with
 		// decimal format this to show 2 places right of the decimal ( using %.2f )
 		// include a new line character at the end of the message
+		int sum = 0;
+
+		for (int i = 0; i < arr.length; i++) {
+			sum += arr[i];
+		}
+		double result = (double) sum / arr.length;
+		System.out.printf("%.2f\n", result);
+
+
 	}
-	
+
 	// this will be in an interface
 	// and will be the exact same implementation in both classes
-	public  void setValue(int index) {
+	public void setValue(int index) {
 		// this will be using the class level variable
-		// if the value at array[index] == 1 then print a message saying that you set the
+		// if the value at array[index] == 1 then print a message saying that you set
+		// the
 		// value to 1
 		// otherwise print a message saying that it was already changed
+//		if (this.value == 1) {
+//			System.out.println("The value is set to 1");
+//		}
+//		else {
+//			System.out.println("Value was already changed");
+//		}
+
 	}
 
 	// this will be an extra function in one of the 2 classes
 	public void move(int value, int id) {
-		// if the value at array[id] == -1 then print a message saying "Value with id: {id} is moved to {value}" and set the value to 1
+		// if the value at array[id] == -1 then print a message saying "Value with id:
+		// {id} is moved to {value}" and set the value to 1
+		if (value == -1) {
+			System.out.println("Value with id: " + id + " is moved to " + value);
+			value = 1;
+		}
 		// otherwise print a message saying "Value is already -1"
+		else {
+			System.out.println("Value is already -1");
+		}
 	}
 }

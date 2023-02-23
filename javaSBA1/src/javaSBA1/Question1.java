@@ -1,6 +1,7 @@
 package javaSBA1;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 // on the sba there will be a interface and we have to make methods to work with the interface
@@ -12,6 +13,10 @@ public class Question1 {
 	// String x = null; this means that no string object has been created and there
 	// is no memory allocated
 	// String x = ""; this is an empty string that has been allocated to memory
+
+	String x = null;
+//	String x = "";
+	List<String> list;
 
 	// ( x == null ) is true
 	// ( x.equals("") ) will throw a NullPointerException
@@ -36,28 +41,45 @@ public class Question1 {
 		// zero, one, three, five
 	}
 
-	private ArrayList<String> list;
 
 	Question1() {
 		// in the constructor create a new array list
-		ArrayList<String> list = new ArrayList<String>();
+		list = new ArrayList<String>();
 	}
 
 	public void convert(String[] arr) {
 		// add the elements in the string array to the list of strings
 
-		// list.add(arr[i]);
-
+		list = Arrays.asList(arr);
+		//System.out.println(list);
 	}
 
 	public void replace(int idx) {
 		// in an ArrayList write the value at idx to be an empty string
 		// print a message saying what the value of the position in the list is and the
 		// value you are overwriting it with
+		list.set(idx, x);
+		System.out.println("The Value of position " + idx + " Will be replaced with " + x);
+		//System.out.println(list);
+
+		
 	}
 
-	public ArrayList<String> compact() {
+	public List<String> compact() {
 		// remove all values in the array list that are empty strings
-		return null;
+		// make a new array list
+	    List<String> result = new ArrayList<String>();
+	    // for every string in the old list
+	    for (String str : list) {
+	        // if that string is not equal to null AND not empty
+	    	if (str != null && !str.isEmpty()) {
+	            // add it to the new array list
+	    		result.add(str);
+	        }
+	    }
+
+		
+		//		list.removeAll(Arrays.asList("", null));
+		return result;
 	}
 }
