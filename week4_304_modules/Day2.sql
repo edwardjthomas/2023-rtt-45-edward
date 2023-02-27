@@ -145,5 +145,16 @@ select subtable.*, subtable.net_sales - subtable.COGS as total_profit, (net_sale
 		) as subtable
 	order by profit_margin asc;
 
--- HW #1 of all the customer that have made orders, I want to see the first order date, month of the first order, the last order date, year o fthe last order
--- and how long this customer has been a customer ( last - first ) in days
+-- HW #1 of all the customer that have made orders, I want to see the customer name, first order date, month of the first order, the last order date, 
+-- year of the last order, and how long this customer has been a customer ( last - first ) in days
+-- this was going to involve the customers, the orders
+-- the minimum order date "For Each Customer"?
+-- what does it trigger?
+-- use group by
+-- group by the customer id
+-- subtract the max order date from min order date to get the amount of days this person has been a customer FOR EACH CUSTOMER
+-- you can also use MONTH & YEAR to find the month and year of the order date
+
+-- HW #2 I want to know the average margin for all orders sorted by the order with the highest margin first. This includes the margin on the quantity of products sold
+
+-- HW #3 - Extra Hard :/ - I want to see my most profitable customers by the average profit margin of all their orders (kinda builds on HW# 2)
