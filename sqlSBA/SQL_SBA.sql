@@ -20,8 +20,8 @@ select * from course;
 
 -- 4
 select c.name as Course_Name
-from course c
-where c.deptId = 1
+from course c, facultyCourse fc
+where fc.courseid = 0
 order by Course_Name asc;
 
 select * from course;
