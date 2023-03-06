@@ -90,16 +90,22 @@ order by Average_Progress desc, Course_Name asc;
 -- 11
 -- issue: getting only one value to properly appear and making max work properly to do so
 -- i think it's due to a misplacement of ()
+-- this is the correct take
 select name as Course_Name, max(Average_Progress) as Average_Student_Progress
 from (select c.name, cast(avg(sc.progress) as decimal(10,1)) as Average_Progress from studentCourse sc inner join course c on (c.id = sc.courseid) group by c.name ) as Average_Student_Progress, studentCourse sc
-group by name;
+group by name
+order by Average_Student_Progress desc
+limit 1;
 
+-- this only returned the correct amount
 SELECT MAX(Average_Progress) AS Average_Student_Progress
     FROM (SELECT c.name AS Course_Name, ROUND(AVG(sc.progress),1) AS Average_Progress
             FROM studentCourse sc INNER JOIN course c ON (sc.courseId = c.id)
             GROUP BY c.name
-            ORDER BY Average_Progress DESC) as sax;
+            ORDER BY Average_Progress DESC) as sax
+            ;
             
+-- this returned all the names            
 select c.name as Course_Name, cast(avg(sc.progress) as decimal(10,1)) as Average_Student_Progress
 from  course c, studentCourse sc
 inner join facultyCourse fc on (sc.courseId = fc.courseId)

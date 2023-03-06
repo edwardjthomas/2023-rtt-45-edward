@@ -23,7 +23,7 @@ public class HibernateExample {
 		customer.setCountry("USA");
 		customerDao.insert(customer);
 		
-		Customer first = customerDao.findById(497);
+		Customer first = customerDao.findById(103);
 		System.out.println(first.toString());
 
 		first.setAddressLine2("This is an update");
@@ -31,7 +31,7 @@ public class HibernateExample {
 		first.setCreditLimit(100000.35);
 
 		customerDao.update(first);
-		customerDao.delete(first);
+		// customerDao.delete(first);
 
 		List<Customer> firstNames = customerDao.findByContactFirstName("Leslie");
 		for (Customer c : firstNames) {

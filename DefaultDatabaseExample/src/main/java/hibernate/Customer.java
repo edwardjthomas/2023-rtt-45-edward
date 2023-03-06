@@ -1,10 +1,14 @@
 package hibernate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -46,13 +50,34 @@ public class Customer {
 	@Column(name="country")
 	private String country;
 	
-	@Column(name="salesRepEmployeeNumber")
+	// this essentially makes this column a read only variable in this entity object
+	// we add the insertable = falese and updatable = false
+	// because we are using a @ManyToOne mapping that is on this same column
+	// the other option is to simply delete these 2 lines
+	@Column(name="salesRepEmployeeNumber", insertable = false, updatable = false)
 	private Integer salesRepEmployeeNumber;
 	
 	@Column(name="credit_limit", columnDefinition="decimal", precision=10, scale=2)
 	private Double creditLimit;
 
+	// salesRepEmployeeNumber
+    @ManyToOne(fetch = FetchType.EAGER, optional = true, cascade = CascadeType.ALL)
+    @JoinColumn(name = "salesRepEmployeeNumber", nullable = true)
+    private Employee employee;
 	
+	
+	public Employee getEmployee() {
+		return employee;
+	}
+
+
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Customer [id=" + id + ", customerName=" + customerName + ", contactLastName=" + contactLastName

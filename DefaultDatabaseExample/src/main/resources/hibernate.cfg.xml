@@ -21,5 +21,6 @@
   
         <!--   Mapping entity file -->
         <mapping class="hibernate.Customer"/>
+        <mapping class="hibernate.Employee"/>
     </session-factory>
 </hibernate-configuration>
