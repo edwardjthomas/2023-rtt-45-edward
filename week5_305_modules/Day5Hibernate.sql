@@ -10,3 +10,5 @@ select * from orders;
 
 select * from products;
 
+select * from orderdetails order by id desc;
+

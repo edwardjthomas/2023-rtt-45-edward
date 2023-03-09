@@ -14,6 +14,7 @@ public class OneToManyExample {
 		ProductDAO productDao = new ProductDAO();
 		OrderDetailDAO orderDetailDao = new OrderDetailDAO();
 
+		// printing employee 1166 info
 //		Employee e = employeeDao.findById(1166);
 //		System.out.println(e);
 //
@@ -21,6 +22,7 @@ public class OneToManyExample {
 //			System.out.println(customer);
 //		}
 
+		// adding a customer
 //		Customer customer = new Customer();
 //		customer.setCustomerName("Hibernate customer");
 //		customer.setContactFirstName("First Name");
