@@ -34,7 +34,7 @@ public class Movie {
 	@Column(name = "id")
 	private Integer id;
 
-	@Column(name = "movie_title")
+	@Column(name = "name")
 	private String movieTitle;
 
 	@Column(name = "year_released")
@@ -53,7 +53,7 @@ public class Movie {
 	// one movie to movie rental
 	@ToString.Exclude
 	@LazyCollection(LazyCollectionOption.FALSE)
-	@OneToMany(mappedBy = "movie_rental", cascade = CascadeType.ALL)
-	private List<MovieRental> payments = new ArrayList<MovieRental>();
+	@OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
+	private List<MovieRental> movieRentals = new ArrayList<MovieRental>();
 	
 }

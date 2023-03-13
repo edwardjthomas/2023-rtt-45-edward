@@ -15,6 +15,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -23,6 +24,7 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
+@EqualsAndHashCode
 @Table(name = "payments")
 public class Payment {
 
@@ -51,6 +53,7 @@ public class Payment {
 	// also make sure to use @ToString.Exclude on the manytoones and so on
 	// points back to customer
 	@ToString.Exclude
+	@EqualsAndHashCode.Exclude
 	@ManyToOne(fetch = FetchType.EAGER, optional = false, cascade = CascadeType.ALL)
 	@JoinColumn(name = "customer_id", nullable = false)
 	private Customer customer;

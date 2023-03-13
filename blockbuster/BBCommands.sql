@@ -15,3 +15,5 @@ delete from user where id = 1;
 select * from user;
 
 select * from movie;
+
+select * from movie_rental;

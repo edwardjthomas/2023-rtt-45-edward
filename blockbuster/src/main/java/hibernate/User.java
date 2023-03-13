@@ -47,7 +47,7 @@ public class User {
 	private String password;
 
 	@Column(name = "create_date")
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date createDate;
 
 	@Column(name = "first_name")
@@ -59,8 +59,8 @@ public class User {
 	// one user to movie rental
 	@ToString.Exclude
 	@LazyCollection(LazyCollectionOption.FALSE)
-	@OneToMany(mappedBy = "movie_rental", cascade = CascadeType.ALL)
-	private List<MovieRental> payments = new ArrayList<MovieRental>();
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	private List<MovieRental> movieRentals = new ArrayList<MovieRental>();
 
 
 }

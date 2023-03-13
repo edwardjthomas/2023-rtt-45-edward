@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Form</title>
+</head>
+
+<style>
+    td {
+        padding: 5px;
+    }
+</style>
+
+<body>
+    <h1>Our First Form</h1>
+
+    <form>
+        <table>
+            <tr>
+                <td>First Name: </td>
+                <td><input type="text" name="firstName" /></td>
+            </tr>
+            <tr>
+                <td>Last Name: </td>
+                <td> <input type="text" name="lastName" /></td>
+            </tr>
+            <tr>
+                <td>Password: </td>
+                <td> <input type="password" name="Password" /></td>
+            </tr>
+            <tr>
+                <td>Text Area: </td>
+                <td> <textarea name="textarea" rows="5"></textarea></td>
+            </tr>
+            <tr>
+                <td>Checkbox: </td>
+                <td> <input type="checkbox" id="thisacheckbox" name="checkbox1" value="stillacheckbox" <label
+                        for="thisisacheckbox">This is indeed a checkbox</label>
+                    <br />
+                    <input type="checkbox" id="thisacheckbox2" name="checkbox2" value="stillacheckbox2" <label
+                        for="thisisacheckbox2">This is still a checkbox</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Radio Buttons: </td>
+                <td>
+                    <input type="radio" id="html" name="fav_language" value="HTML">
+                    <label for="html">HTML</label><br>
+                    <input type="radio" id="css" name="fav_language" value="CSS">
+                    <label for="css">CSS</label><br>
+                    <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                    <label for="javascript">JavaScript</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Dropdown (Select) box</td>
+                <td>
+                    <select name="dropdown">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+
+</html>

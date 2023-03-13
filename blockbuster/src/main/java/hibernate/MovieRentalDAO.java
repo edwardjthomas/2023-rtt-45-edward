@@ -1,5 +1,7 @@
 package hibernate;
 
+import java.util.List;
+
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
@@ -46,6 +48,44 @@ public class MovieRentalDAO {
 
 		TypedQuery<MovieRental> query = session.createQuery(hql, MovieRental.class);
 		query.setParameter("idParam", id);
+
+		// when we know we are getting 1 record we use getSingleList (i guess that's
+		// what he typed)
+		MovieRental result = query.getSingleResult();
+
+		session.close();
+
+		return result;
+	}
+	
+	public List<MovieRental> selectAllRentals() {
+		SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		Session session = factory.openSession();
+
+		// this is HQL which is hibernate query language
+		// also referred to as JPA
+		String hql = "FROM MovieRental";
+
+		TypedQuery<MovieRental> query = session.createQuery(hql, MovieRental.class);
+		List<MovieRental> results = query.getResultList();
+
+
+		session.close();
+
+		return results;
+	}
+	
+	public MovieRental findByMovieUser(Integer movieId, Integer userId) {
+		SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		Session session = factory.openSession();
+
+		// this is HQL which is hibernate query language
+		// also referred to as JPA
+		String hql = "FROM MovieRental mr where mr.movieId = :idParam1 AND mr.userId = :idParam2";
+
+		TypedQuery<MovieRental> query = session.createQuery(hql, MovieRental.class);
+		query.setParameter("idParam1", movieId);
+		query.setParameter("idParam2", userId);
 
 		// when we know we are getting 1 record we use getSingleList (i guess that's
 		// what he typed)
