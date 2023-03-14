@@ -1,0 +1,12 @@
+/* <!-- example of using a global css file --> */
+    .page-header {
+        margin-left: 40px;
+        margin-top: 30px;
+        color: green;
+        padding-right: 10px;
+    }
+
+    /* i want all h1 tags on my page to have a 1 pixel solid border */
+    h1 {
+        border: 1px solid;
+    }
