@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- from a file is external styling (the lowest precedent) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- example of style & internal styling (middle precedent) here -->
+    <style>
+        .page-header {
+            margin-left: 40px;
+            margin-top: 30px;
+            color: green;
+        }
+
+        /* i want all h1 tags on my page to have a 1 pixel solid border */
+        h1 {
+            border: 1px solid;
+        }
+
+
+        h1:hover {
+            background-color: bisque;
+        }
+
+        /* playing with hyperlink colors */
+        /* css is applied in order from top to bottom & left to right */
+
+
+        a:visited {
+            color: purple;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        /* an example of using id tags to single out properties */
+        #firsth1 {
+            text-decoration: underline;
+        }
+
+        /* An example of using absolute
+        you'd implement it inside the body like 
+        <div class="absolute-example">div box</div> */
+
+        .absolute-example {
+            width: 200px;
+            height: 200px;
+            background-color: chartreuse;
+            position: absolute
+        }
+    </style>
+
+    <link rel="stylesheet" href="global.css" />
+</head>
+
+<body>
+    <!-- example of in-line styling (highest precedent) -->
+    <h1 id="firsth1" class="page-header">This is a page title</h1>
+    <h2 class="page-header" style="background-color: gray;">This is another page title</h2>
+    <h1 class="page-header">This is a second h1</h1>
+
+    <!-- messing with hyperlinks -->
+    <br>
+    <p><a href="#">This is a link</a></p>
+    <p><a href="/ayo">This link is not visited</a></p>
+    <br>
+
+
+    <div class="container" style="padding-top: 30px;">
+        <!-- you can use table-dark to make it dark mode -->
+        <table class="table table-bordered table-success table-hover table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button type="button" class="btn btn-primary btn-sm">Save</button>
+        <button type="button" class="btn btn-secondary btn-sm">Cancel</button>
+
+    </div>
+</body>
+
+</html>
