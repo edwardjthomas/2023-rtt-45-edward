@@ -1,12 +1,9 @@
 package hibernate;
 
-<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-=======
->>>>>>> 6cd597f878b2d3f9be73397636955e91504371bf
 // TODO
 //Blockbuster Video Rental
 //Create 3 tables each with its own PK and appropriate FKs : User, Movie, and Movie Rental
@@ -24,7 +21,6 @@ import java.util.List;
 //BONUS .. add a due date to the movie rental table and a function double calculateLateFee(User, Movie, FutureDate)
 // Something Else: hook it up to a menu with the scanner (kinda like coffee shop?)
 
-<<<<<<< HEAD
 public class BBMain {
 	UserDAO userDao = new UserDAO();
 	MovieDAO movieDao = new MovieDAO();
@@ -89,13 +85,5 @@ public class BBMain {
 						user.getFirstName() + " " + user.getLastName() + " is renting out " + movie.getMovieTitle());
 			}
 		}
-=======
-public class Main {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
->>>>>>> 6cd597f878b2d3f9be73397636955e91504371bf
 	}
-
 }

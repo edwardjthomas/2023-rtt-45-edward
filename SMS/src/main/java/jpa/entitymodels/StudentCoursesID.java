@@ -1,47 +1,33 @@
 /*
- * Filename: StudentCourses.java
+ * Filename: StudentCourseId.java
 * Author: Stefanski
 * 02/25/2020 
  */
-package jpa.entitymodels;
+package  jpa.entitymodels;
+
+import java.io.Serializable;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
 
 /**
+* Key class for composite key in Student Courses table
  * @author Harry
  *
  */
-@Entity
-@Table( name="courses")
-@IdClass( StudentCoursesID.class)
-@NamedQueries({
-	@NamedQuery( name="CoursesByStudent", query="Select c from StudentCourses c where c.eMail = :email")
-})
-public class StudentCourses {
-	@Id
-	@Column(name="student_email")
+public class StudentCoursesID implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
 	private String eMail;
-	
-	public StudentCourses() {}
-	
-	/**
-	 * @param eMail
-	 * @param courseID
-	 */
-	public StudentCourses(String eMail, int courseID) {
-		this.eMail = eMail;
-		this.courseID = courseID;
+	private int courseID;
+
+	public StudentCoursesID() {
 	}
 
-	@Id
-	@Column(name="course_id")
-	private int courseID;
+	public StudentCoursesID(String email, String courseId) {
+		this.seteMail(email);
+		this.setCourseID(courseID);
+	}
 
 	/**
 	 * @return the eMail
@@ -51,7 +37,8 @@ public class StudentCourses {
 	}
 
 	/**
-	 * @param eMail the eMail to set
+	 * @param eMail
+	 *            the eMail to set
 	 */
 	public void seteMail(String eMail) {
 		this.eMail = eMail;
@@ -65,13 +52,16 @@ public class StudentCourses {
 	}
 
 	/**
-	 * @param courseID the courseID to set
+	 * @param courseID
+	 *            the courseID to set
 	 */
 	public void setCourseID(int courseID) {
 		this.courseID = courseID;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
@@ -83,7 +73,9 @@ public class StudentCourses {
 		return result;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
@@ -94,7 +86,7 @@ public class StudentCourses {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		StudentCourses other = (StudentCourses) obj;
+		StudentCoursesID other = (StudentCoursesID) obj;
 		if (courseID != other.courseID)
 			return false;
 		if (eMail == null) {
@@ -104,5 +96,4 @@ public class StudentCourses {
 			return false;
 		return true;
 	}
-
 }
