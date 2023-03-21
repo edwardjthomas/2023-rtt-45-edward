@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // checkerboard question (worked in class)
+        // let width = prompt("Enter width: ");
+        // let height = prompt("Enter height: ");
+        // var s = "";
+        // for (let row = 0; row <= height; row++) {
+        //     let checker = row % 2;
+        //     if (checker == 1) {
+        //         s += " ";
+        //     }
+        //     for (let col = 0; col <= (width - checker); col++) {
+        //         s += "* ";
+        //     }
+        //     s += "\n"
+        // }
+        // console.log(s);
+
+        // Cross question (looked at in class - ryan's take where the first line WILL NOT space out)
+        // var size = prompt("input size: ");
+        // let str = [size];
+        // for(let i = 0; i < size; i++) {
+        //     str.fill(" ");
+        //     str[i] = "*";
+        //     str[size-(i+1)] = "*";
+        //     console.log(str);
+        // }
+
+        // i think this is the downwards triangle
+        // let size = 5;
+        // let s = "";
+        
+        // for (let row = 0; row < size; row++) {
+        //     for (let col = 0; col < size; col++) {
+        //         if (col < row) {
+        //             s += " ";
+        //         }
+        //         else {
+        //             s += "*";
+        //         }
+        //     }
+        //     s += "\n";
+        // }
+        // console.log(s);
+
+        // the impossible shape
+        let width = 12;
+        let height = 5;
+
+        let s = "";
+        
+        for (let row = 0; row < height; row++) {
+            for (let col = 0; col < width; col++) {
+                if (col < row) {
+                    s += " ";
+                }
+                else if (col > (width - row - 1) ) {
+                    s += " ";
+                }
+                else {
+                    s += "*";
+                }
+            }
+            s += "\n";
+        }
+        console.log(s);
+
+        // some regex solutions to our training
+        // ^([aeiou]).*\1$ (for day 7-1)
+        // ^[MDE][rs]s{0,1}\. (for day 7-2 but the harder path)
+        // ^(Mr\.|Mrs\.|Ms\.|Dr\.|Er\.)[a-zA-Z]+$ (for day 7-2 but the easier path)
+        // regex (regular expressions) is very funky...and not in a good way
+    </script>
+</body>
+
+</html>

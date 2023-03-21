@@ -41,6 +41,7 @@ public class Course {
 
 	@ToString.Exclude
 	@LazyCollection(LazyCollectionOption.FALSE)
+	@EqualsAndHashCode.Exclude
 	@OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
 	private List<StudentCourse> studentcourse = new ArrayList<StudentCourse>();
 
