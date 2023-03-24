@@ -1,0 +1,58 @@
+<!-- going over dates -->
+<!-- look into cards for case study -->
+<!-- look into svg for icons -->
+<!-- look into font awesome for icons as well -->
+<!-- look into autoplaying a random song from youtube as well -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        dates();
+        arrayForEach();
+
+        function dates() {
+
+            // the ideal style for the dates that we're not expected to remember is:    
+            var date = new Date("Thu Jan 29 2009 17:31:44");
+
+            // the style we may know is:
+            var dat1 = new Date("2019-01-24 18:31:44");
+
+            let today = new Date("2023-03-23 14:58:36");
+            let now = new Date();
+            console.log("================== start dates ===================");
+
+            console.log(now.getMonth() === today.getMonth());
+            console.log(now.getYear() === today.getYear());
+        }
+
+
+
+        function arrayForEach() {
+            console.log("=================== start arrays for each ====================");
+            let sum = 0;
+            const numbers = [65, 44, 12, 4];
+            numbers.forEach(myFunction);
+
+            function myFunction(item) {
+                sum += item;
+            }
+
+            console.log(sum);
+        }
+
+    </script>
+
+</body>
+
+</html>
