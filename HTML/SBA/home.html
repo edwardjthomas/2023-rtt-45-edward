@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- from a file is external styling (the lowest precedent) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@200;400&display=swap" rel="stylesheet">
+
+    <style>
+        /* background image for extra */
+        body {
+            background-image: url('https://scontent-atl3-2.xx.fbcdn.net/v/t31.18172-8/705298_536023636426394_263518077_o.jpg?_nc_cat=104&ccb=1-7&_nc_sid=19026a&_nc_ohc=3VyBRAhXJgMAX_fLIGD&_nc_ht=scontent-atl3-2.xx&oh=00_AfCMN7rzLM4-FNcqGvDAjEAi7oTHfzzymmnKFdR-J2Xttw&oe=644511EC');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        /* css id selector */
+        #headergradient {
+            background-image: linear-gradient(to bottom, #87cefa, #ff000000);
+        }
+
+        /* html tag selector */
+        h4 {
+
+            font-family: 'Exo';
+            color: aliceblue;
+
+        }
+
+        #backgroundVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        /* css class selector */
+        .footer {
+            color: black;
+            position: fixed;
+            bottom: 0%;
+            left: 0%;
+            font-family: 'Exo';
+            text-align-last: center;
+            padding-top: 1%;
+            width: 100%;
+            background-image: linear-gradient(to top, #87cefa, #ff000000);
+        }
+
+        .nav-item {
+            font-family: Exo;
+        }
+
+        /* Style the button used to pause/play the video */
+        #videoButton {
+            font-size: 16px;
+            padding: 7px;
+            border: none;
+            background: #00000088;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        #videoButton:hover {
+            background: #dddddd;
+            color: black;
+        }
+    </style>
+
+
+    <!-- attempting to create a toggle video playback button for background video using youtube api -->
+    <script src="sbascripts.js"></script>
+</head>
+
+<body>
+    <!-- funny YouTube background video -->
+    <!-- looped by putting video into playlist with only the video playing -->
+    <div> <iframe width="560" height="315" id="backgroundVideo"
+            src="https://www.youtube.com/embed/KClnQgyPacU?autoplay=1&loop=1&list=PLnjowaTwz63G6pwPZk0hL2K-iiQH37-6R&mute=1&controls=0&showinfo=0&enablejsapi=1"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; mute; loop; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+    </div>
+    <!-- the opacity screen for the background to prevent the video from being too bright -->
+    <div
+        style="background-color:black; opacity: 80%; position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%;">
+    </div>
+
+    <!-- navigation bar -->
+    <nav id="headergradient" class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img
+                    src="https://www.trueachievements.com/imagestore/0006853200/6853232.jpg" alt="logo" /></a>
+            <h4 id="pageTitle">Services by You Should Leave Him Be</h4>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- drop down menu for navigation bar -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="home.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="commission.html">Commission Form & TOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="extra.html">Extra (A Gift For Me)</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Use a button to pause/play the video with JavaScript -->
+                        <button id="videoButton" onclick="pauseVideo()">Pause Video</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- a card with a image for about information -->
+    <div class="card mb-3" style="width: 30%; left: auto; bottom: auto; position: relative; vertical-align: middle;">
+        <img src="https://blazblue.wiki/images/thumb/7/70/BlazBlue_Cross_Tag_Battle_Yosuke_Hanamura_Main.png/800px-BlazBlue_Cross_Tag_Battle_Yosuke_Hanamura_Main.png" class="card-img-top" alt="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">About You Should Leave Him Be...</h5>
+            <p class="card-text">You know what? Maybe you should leave him be...</p>
+        </div>
+    </div>
+
+    <!-- a card with a list group inside -->
+    <div class="card mb-3" style="width: 30%; position: relative;">
+        <img src="https://blazblue.wiki/images/2/22/BlazBlue_Cross_Tag_Battle_Yosuke_Hanamura_Cutin.png" class="card-img-top" alt="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">What does he do?</h5>
+            <ul class="list-group">
+                <li class="list-group-item">Commissions of the various variety!</li>
+                <li class="list-group-item">Singing</li>
+                <li class="list-group-item">Voice Over</li>
+                <li class="list-group-item">Art</li>
+              </ul>
+            <p class="card-text">If you need his services then he's ready to go!</p>
+            <p class="card-text">For more information, just head over to<a class="nav-link" href="commission.html"> Commission Form & TOS </a></p>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>You Should Leave Him Be © 2023</p>
+    </div>
+</body>
+
+</html>

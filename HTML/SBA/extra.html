@@ -14,36 +14,85 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@200;400&display=swap" rel="stylesheet">
+
     <style>
+        /* background image for extra */
         body {
             background-image: url('https://scontent-atl3-2.xx.fbcdn.net/v/t31.18172-8/705298_536023636426394_263518077_o.jpg?_nc_cat=104&ccb=1-7&_nc_sid=19026a&_nc_ohc=3VyBRAhXJgMAX_fLIGD&_nc_ht=scontent-atl3-2.xx&oh=00_AfCMN7rzLM4-FNcqGvDAjEAi7oTHfzzymmnKFdR-J2Xttw&oe=644511EC');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;
         }
+
+        #headergradient {
+            background-image: linear-gradient(to bottom, rgb(135, 206, 250), rgba(255, 0, 0, 0));
+        }
+
+        #pageTitle {
+
+            font-family: 'Exo';
+            color: aliceblue;
+
+        }
+
+        #backgroundVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        .footer {
+            color: black;
+            position: fixed;
+            bottom: 0%;
+            left: 0%;
+            font-family: 'Exo';
+            text-align-last: center;
+            padding-top: 1%;
+            width: 100%;
+            background-image: linear-gradient(to top, #87cefa, #ff000000);
+        }
+
+
+        .nav-item {
+            font-family: Exo;
+        }
     </style>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light"
-        style="box-shadow: 0 4px 2px -2px gray; background-color: yellow;">
+    <!-- navigation bar -->
+    <nav id="headergradient" class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">This was supposed to be a RickRoll But...</a>
+            <a class="navbar-brand" href="#"><img
+                    src="https://www.trueachievements.com/imagestore/0006853200/6853232.jpg" alt="logo" /></a>
+            <h4 id="pageTitle">This Part Was Supposed To Be A Rickroll But Instead It's The Fresh Prince of Inaba</h4>
+
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- drop down menu for navigation bar -->
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="hahafunny.html">Page 1</a>
+                        <a class="nav-link active" href="home.html">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="insert page 2 html here">Page 2</a>
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="insert page 3 html here">Page 3</a>
+                        <a class="nav-link" href="commission.html">Commission Form & TOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="extra.html">Extra (A Gift For Me)</a>
                     </li>
                 </ul>
             </div>
@@ -52,13 +101,19 @@
 
     <p hidden>
 
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/d-x3ojOGWa8?autoplay=1&loop=1"
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/d-x3ojOGWa8?autoplay=1"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen>
         </iframe>
 
     </p>
+
+
+
+    <div class="footer">
+        <p>You Should Leave Him Be © 2023</p>
+    </div>
 </body>
 
 </html>

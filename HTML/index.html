@@ -14,9 +14,12 @@
         crossorigin="anonymous"></script>
 </head>
 
+<!-- look into the required keyword in js or html -->
+
 <body>
     <!-- this shows us the navigation bar and how it works a little bit -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="box-shadow: 0 4px 2px -2px gray; background-color: rgb(198, 228, 151);">
+    <nav class="navbar navbar-expand-lg navbar-light"
+        style="box-shadow: 0 4px 2px -2px gray; background-color: rgb(198, 228, 151);">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -48,6 +51,58 @@
             </div>
         </div>
     </nav>
+
+
+    <script>
+        function onClickFunction() {
+            console.log("On click clicked");
+            let name = document.getElementById("name");
+            console.log(name.value);
+
+            // what if we wanted to make the name value required?
+            if (name.value == "") {
+                console.log("Name is required");
+                name.classList.add("is-invalid");
+
+            }
+
+
+            // creat new regular expression
+            const re = new RegExp("[a-zA-Z]+");
+
+            // the value that we want to match the regex against is - name.value
+            // this is the value of the input field
+            // the function match in javascript is going to do the regex match and we pass in the regex itself
+            // match returns boolean true or false if regex matched or not
+            const found = name.value.match(re);
+            if (found) {
+                console.log("the name matches the regex");
+            } else {
+                console.log("the name does not match the regex");
+
+            }
+
+        }
+    </script>
+    <section class="pt-5 pb-5" style="background-color: peachpuff;">
+        <div class="container">
+            <form>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">* Email Address</label>
+                    <input type="text" placeholder="Email address" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" placeholder="Full Name" class="form-control" id="name"
+                        aria-describedby="nameHelp">
+                    <div id="nameHelp" class="form-text">Let us know who you are.</div>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="onClickFunction()">Submit</button>
+            </form>
+        </div>
+    </section>
 
     <!-- something that indicates this entire area is all related -->
     <!-- this area messes around with manipulating margins and adding background colors to a certain divided area with shortcut words i think -->
