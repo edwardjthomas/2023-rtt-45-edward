@@ -22,11 +22,7 @@
 
 
     <dependencies>
-        <!--    does everything for us even our taxes-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -67,6 +63,11 @@
 
 
         <!-- database -->
+        <!--    does everything for us even our taxes-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>com.mysql</groupId>
@@ -74,6 +75,7 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!--utils-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

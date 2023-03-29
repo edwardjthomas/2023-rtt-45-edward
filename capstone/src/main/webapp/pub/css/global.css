@@ -1,0 +1,57 @@
+        /* background image for extra */
+        body {
+            background-image: url('https://scontent-atl3-2.xx.fbcdn.net/v/t31.18172-8/705298_536023636426394_263518077_o.jpg?_nc_cat=104&ccb=1-7&_nc_sid=19026a&_nc_ohc=3VyBRAhXJgMAX_fLIGD&_nc_ht=scontent-atl3-2.xx&oh=00_AfCMN7rzLM4-FNcqGvDAjEAi7oTHfzzymmnKFdR-J2Xttw&oe=644511EC');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: 'Exo', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        /* css id selector */
+        #headergradient {
+            background-image: linear-gradient(to bottom, #87cefa, #ff000000);
+        }
+
+        /* html tag selector */
+        h4 {
+
+            font-family: 'Exo';
+            color: aliceblue;
+
+        }
+
+        #backgroundVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        /* css class selector */
+        .footer {
+            color: black;
+            position: fixed;
+            bottom: 0%;
+            left: 0%;
+            font-family: 'Exo';
+            text-align-last: center;
+            padding-top: 0.5%;
+            width: 100%;
+            background-image: linear-gradient(to top, #87cefa, #ff000000);
+        }
+
+        /* Style the button used to pause/play the video */
+        #videoButton {
+            font-size: 16px;
+            padding: 7px;
+            border: none;
+            background: #00000088;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        #videoButton:hover {
+            background: #dddddd;
+            color: black;
+        }
