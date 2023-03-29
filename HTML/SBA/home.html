@@ -18,15 +18,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo:wght@200;400&display=swap" rel="stylesheet">
 
-    <style>
-        /* background image for extra */
-        body {
-            background-image: url('https://scontent-atl3-2.xx.fbcdn.net/v/t31.18172-8/705298_536023636426394_263518077_o.jpg?_nc_cat=104&ccb=1-7&_nc_sid=19026a&_nc_ohc=3VyBRAhXJgMAX_fLIGD&_nc_ht=scontent-atl3-2.xx&oh=00_AfCMN7rzLM4-FNcqGvDAjEAi7oTHfzzymmnKFdR-J2Xttw&oe=644511EC');
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-        }
+    <link rel="stylesheet" type="text/css" href="style.css">
 
+    <style>
         /* css id selector */
         #headergradient {
             background-image: linear-gradient(to bottom, #87cefa, #ff000000);
@@ -56,13 +50,9 @@
             left: 0%;
             font-family: 'Exo';
             text-align-last: center;
-            padding-top: 1%;
+            padding-top: 0.5%;
             width: 100%;
             background-image: linear-gradient(to top, #87cefa, #ff000000);
-        }
-
-        .nav-item {
-            font-family: Exo;
         }
 
         /* Style the button used to pause/play the video */
@@ -103,7 +93,7 @@
     <!-- navigation bar -->
     <nav id="headergradient" class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img
+            <a class="navbar-brand" href="home.html"><img
                     src="https://www.trueachievements.com/imagestore/0006853200/6853232.jpg" alt="logo" /></a>
             <h4 id="pageTitle">Services by You Should Leave Him Be</h4>
 
@@ -137,8 +127,10 @@
     </nav>
 
     <!-- a card with a image for about information -->
-    <div class="card mb-3" style="width: 30%; left: auto; bottom: auto; position: relative; vertical-align: middle;">
-        <img src="https://blazblue.wiki/images/thumb/7/70/BlazBlue_Cross_Tag_Battle_Yosuke_Hanamura_Main.png/800px-BlazBlue_Cross_Tag_Battle_Yosuke_Hanamura_Main.png" class="card-img-top" alt="card-img-top">
+    <div class="card mb-3 mx-auto"
+        style="width: 30%; left: auto; bottom: auto; position: relative; vertical-align: middle;">
+        <img src="https://blazblue.wiki/images/thumb/7/70/BlazBlue_Cross_Tag_Battle_Yosuke_Hanamura_Main.png/800px-BlazBlue_Cross_Tag_Battle_Yosuke_Hanamura_Main.png"
+            class="card-img-top" alt="card-img-top">
         <div class="card-body">
             <h5 class="card-title">About You Should Leave Him Be...</h5>
             <p class="card-text">You know what? Maybe you should leave him be...</p>
@@ -146,8 +138,9 @@
     </div>
 
     <!-- a card with a list group inside -->
-    <div class="card mb-3" style="width: 30%; position: relative;">
-        <img src="https://blazblue.wiki/images/2/22/BlazBlue_Cross_Tag_Battle_Yosuke_Hanamura_Cutin.png" class="card-img-top" alt="card-img-top">
+    <div class="card mb-3 mx-auto" style="width: 30%; position: relative;">
+        <img src="https://blazblue.wiki/images/2/22/BlazBlue_Cross_Tag_Battle_Yosuke_Hanamura_Cutin.png"
+            class="card-img-top" alt="card-img-top">
         <div class="card-body">
             <h5 class="card-title">What does he do?</h5>
             <ul class="list-group">
@@ -155,12 +148,14 @@
                 <li class="list-group-item">Singing</li>
                 <li class="list-group-item">Voice Over</li>
                 <li class="list-group-item">Art</li>
-              </ul>
+            </ul>
             <p class="card-text">If you need his services then he's ready to go!</p>
-            <p class="card-text">For more information, just head over to<a class="nav-link" href="commission.html"> Commission Form & TOS </a></p>
-
+            <p class="card-text">For more information, just head over to<a class="nav-link" href="commission.html">
+                    Commission Form & TOS </a></p>
         </div>
     </div>
+    <!-- dealing with the issue of not being able to click on the bottom -->
+    <div style="padding: 5%;"></div>
 
     <div class="footer">
         <p>You Should Leave Him Be © 2023</p>

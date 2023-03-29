@@ -14,7 +14,7 @@ function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
         height: '390',
         width: '640',
-        videoId: 'M7lc1UVf-VE',
+        videoId: '45gYo1tpi9A',
         playerVars: {
             'playsinline': 1
         },
@@ -36,7 +36,7 @@ function onPlayerReady(event) {
 var done = false;
 function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.PLAYING && !done) {
-        setTimeout(stopVideo, 6000);
+        setTimeout(stopVideo, 60000);
         done = true;
     }
 }

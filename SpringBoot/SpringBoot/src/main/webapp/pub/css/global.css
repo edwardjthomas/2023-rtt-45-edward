@@ -1,26 +1,12 @@
-/* <!-- example of using a global css file --> */
-.page-header {
-    margin-left: 40px;
-    margin-top: 30px;
-    color: green;
-    padding-right: 10px;
+/* this file is really for css that's on all pages */
+body {
+    font-family: 'Montserrat' !important;
+}
+/* There’s a style tab over in the inspect element where you can click on and off css to see what the */
+.bg-light-color {
+    background-color: #dfdfdf;
 }
 
-/* i want all h1 tags on my page to have a 1 pixel solid border */
-h1 {
-    border: 1px solid;
-}
-
-h3 {
-    color: #87cefa;
-    background-color: crimson;
-}
-
-.gradient {
-    text-align: center;
-    vertical-align: center;
-    width: 100%;
-    height: 100px;
-    background: #87cefa;
-    background: linear-gradient(90deg, rgba(255, 214, 0, 1) 0%, rgb(22, 114, 114) 49%, #8a7686 100%);
+.bg-dark-color {
+    background-color: #838383;
 }

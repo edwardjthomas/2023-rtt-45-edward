@@ -25,6 +25,7 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
+            font-family: 'Exo', 'Arial Narrow', Arial, sans-serif;
         }
 
         #headergradient {
@@ -39,7 +40,7 @@
         }
 
         #backgroundVideo {
-            position: absolute;
+            position: fixed;
             right: 0;
             bottom: 0;
             min-width: 100%;
@@ -108,7 +109,7 @@
     <!-- navigation bar -->
     <nav id="headergradient" class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img
+            <a class="navbar-brand" href="home.html"><img
                     src="https://www.trueachievements.com/imagestore/0006853200/6853232.jpg" alt="logo" /></a>
             <h4 id="pageTitle">Services by You Should Leave Him Be</h4>
 
@@ -142,29 +143,43 @@
     </nav>
 
     <!-- image for the portfolio -->
-    <figure class="figure">
-        <img src="https://blazblue.wiki/images/2/22/BlazBlue_Cross_Tag_Battle_Yosuke_Hanamura_Cutin.png" class="figure-img img-fluid rounded" alt="...">
-        <figcaption class="figure-caption">A caption for the above image.</figcaption>
-      </figure>
-
+    <section>
+        <h1>Examples of his work</h1>
+        <div class="d-flex text-center align-items-center">
+            <figure class="figure ">
+                <img src="https://blazblue.wiki/images/2/22/BlazBlue_Cross_Tag_Battle_Yosuke_Hanamura_Cutin.png"
+                    class="figure-img img-fluid rounded" alt="...">
+                <figcaption class="figure-caption">A caption for the above image.</figcaption>
+            </figure>
+        </div>
+    </section>
 
 
     <!-- a carousel for the portfolio -->
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://blazblue.wiki/images/2/22/BlazBlue_Cross_Tag_Battle_Yosuke_Hanamura_Cutin.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://blazblue.wiki/images/2/22/BlazBlue_Cross_Tag_Battle_Yosuke_Hanamura_Cutin.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://blazblue.wiki/images/2/22/BlazBlue_Cross_Tag_Battle_Yosuke_Hanamura_Cutin.png" class="d-block w-100" alt="...">
-          </div>
+            <div class="carousel-item active">
+                <img src="https://blazblue.wiki/images/2/22/BlazBlue_Cross_Tag_Battle_Yosuke_Hanamura_Cutin.png"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://blazblue.wiki/images/2/22/BlazBlue_Cross_Tag_Battle_Yosuke_Hanamura_Cutin.png"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://blazblue.wiki/images/2/22/BlazBlue_Cross_Tag_Battle_Yosuke_Hanamura_Cutin.png"
+                    class="d-block w-100" alt="...">
+            </div>
         </div>
-      </div>
-      
-      <div class="footer">
+    </div>
+
+    <!-- another youtube video embed using the api -->
+    <div id="player"></div>
+
+    <!-- dealing with the issue of not being able to click on the bottom -->
+    <div style="padding: 5%;"></div>
+
+    <div class="footer">
         <p>You Should Leave Him Be © 2023</p>
     </div>
 </body>
