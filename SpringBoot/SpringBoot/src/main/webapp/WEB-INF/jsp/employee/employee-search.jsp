@@ -20,9 +20,13 @@
                             <!-- if you want the form to submit you remove type = "button" -->
                             <!-- you need to give input tag a name if you want to search for something on the page. it will reflect on the url if the search submit was successful -->
                             <input type="text" class="form-control" name="firstsearch" placeholder="Employee First Name"
-                                aria-label="Employee First Name" aria-describedby="search" value="${firstsearchParameter}">
-                            <input type="text" class="form-control" name="lastsearch" placeholder="Employee Last Name"
-                                aria-label="Employee Last Name" aria-describedby="search" value="${lastsearchParameter}">
+                                aria-label="Employee First Name" aria-describedby="search"
+                                value="${firstsearchParameter}">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" name="lastsearch"
+                                    placeholder="Employee Last Name" aria-label="Employee Last Name"
+                                    aria-describedby="search" value="${lastsearchParameter}">
+                            </div>
                         </div>
                         <button class="btn btn-outline-secondary" id="search">Search</button>
                     </form>

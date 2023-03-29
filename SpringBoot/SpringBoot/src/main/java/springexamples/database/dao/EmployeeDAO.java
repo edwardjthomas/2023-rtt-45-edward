@@ -21,6 +21,12 @@ public interface EmployeeDAO extends JpaRepository<Employee, Long> {
 
     List<Employee> findByFirstNameContainingOrLastNameContainingIgnoreCase(String firstName, String lastName);
 
+    List<Employee> findByFirstNameContainingIgnoreCase(String firstsearch);
+
+    List<Employee> findByLastNameContainingIgnoreCase(String lastsearch);
+
+
+
     // challenges because of course
     // write a native query in workbench that will be
     // findByFirstNameContainingOrLastNameContainingIgnoreCase
