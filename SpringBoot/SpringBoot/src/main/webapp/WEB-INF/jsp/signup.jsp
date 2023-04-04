@@ -77,3 +77,4 @@
     </section>
 
     <jsp:include page="include/footer.jsp" />
+    <!-- please for the love of god remember to use ../ for header and footer if it cannot be found within the project's directory on the webpage -->

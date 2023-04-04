@@ -19,6 +19,7 @@ public interface EmployeeDAO extends JpaRepository<Employee, Long> {
     // springboot will sort out all the rest
     // do you see how long this is? and how little we've typed?
 
+    // spring data query (required)
     List<Employee> findByFirstNameContainingOrLastNameContainingIgnoreCase(String firstName, String lastName);
 
     List<Employee> findByFirstNameContainingIgnoreCase(String firstsearch);
@@ -34,12 +35,14 @@ public interface EmployeeDAO extends JpaRepository<Employee, Long> {
     // if you're in a team where the database will not change, it's okay to use a
     // native query
 
-    // challenge one
+    // challenge one - native query (required)
     @Query(value = "SELECT * FROM employees WHERE lower(firstname) LIKE %:firstName% OR lower(lastname) LIKE %:lastName% ;", nativeQuery = true)
     List<Employee> usingNativeQuery(String firstName, String lastName);
 
-    // same challenge above but make a JPA query
+    // same challenge above but make a JPA query (required)
     @Query(value = "SELECT e FROM Employee e WHERE lower(e.firstName) LIKE %:firstName% OR lower(e.lastName) LIKE %:lastName% ")
     List<Employee> usingJPAQuery(String firstName, String lastName);
 
+    // another example inside @PathVariable
+    Employee findById(Integer id);
 }

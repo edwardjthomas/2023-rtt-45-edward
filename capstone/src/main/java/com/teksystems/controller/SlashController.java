@@ -13,28 +13,28 @@ public class SlashController {
 
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public ModelAndView home() {
-        log.info("In the home controller method.");
+        log.debug("In the home controller method.");
         ModelAndView response = new ModelAndView("home");
         return response;
     }
 
     @RequestMapping(value = "/portfolio", method = RequestMethod.GET)
     public ModelAndView portfolio() {
-        log.info("In the portfolio controller method.");
+        log.debug("In the portfolio controller method.");
         ModelAndView response = new ModelAndView("portfolio");
         return response;
     }
 
     @RequestMapping(value = "/commission", method = RequestMethod.GET)
     public ModelAndView commission() {
-        log.info("In the commission controller method.");
+        log.debug("In the commission controller method.");
         ModelAndView response = new ModelAndView("commission");
         return response;
     }
 
     @RequestMapping(value = "/queue", method = RequestMethod.GET)
     public ModelAndView queue() {
-        log.info("In the queue controller method.");
+        log.debug("In the queue controller method.");
         ModelAndView response = new ModelAndView("queue");
         return response;
     }
