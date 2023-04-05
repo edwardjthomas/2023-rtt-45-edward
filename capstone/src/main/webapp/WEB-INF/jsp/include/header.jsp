@@ -41,13 +41,13 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="home">Home</a>
+                        <a class="nav-link active" aria-current="page" href="signin">Sign In</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="portfolio">Meet The Team</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="queue">Queue</a>
+                        <a class="nav-link" href="waitlist">Waitlists</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="commission">Commission Form & TOS</a>

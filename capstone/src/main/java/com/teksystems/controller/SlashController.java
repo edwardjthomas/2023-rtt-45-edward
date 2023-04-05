@@ -32,10 +32,31 @@ public class SlashController {
         return response;
     }
 
-    @RequestMapping(value = "/queue", method = RequestMethod.GET)
-    public ModelAndView queue() {
-        log.debug("In the queue controller method.");
-        ModelAndView response = new ModelAndView("queue");
+    @RequestMapping(value = "/waitlist", method = RequestMethod.GET)
+    public ModelAndView waitlist() {
+        log.debug("In the waitlist controller method.");
+        ModelAndView response = new ModelAndView("waitlist");
+        return response;
+    }
+
+    @RequestMapping(value = "/create", method = RequestMethod.GET)
+    public ModelAndView create() {
+        log.debug("In the create controller method.");
+        ModelAndView response = new ModelAndView("create");
+        return response;
+    }
+
+    @RequestMapping(value = "/edit", method = RequestMethod.GET)
+    public ModelAndView edit() {
+        log.debug("In the edit controller method.");
+        ModelAndView response = new ModelAndView("edit");
+        return response;
+    }
+
+    @RequestMapping(value = "/signin", method = RequestMethod.GET)
+    public ModelAndView signin() {
+        log.debug("In the signin controller method.");
+        ModelAndView response = new ModelAndView("signin");
         return response;
     }
 
