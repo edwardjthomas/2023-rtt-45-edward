@@ -20,6 +20,14 @@
             <form action="/employee/createSubmit">
                 <!-- we have to add the id that we established from the employeecontroller as a hidden value underneath the form call -->
                 <input type="hidden" name="id" value="${form.id}" />
+                
+                <div class=" mb-3">
+                    <c:if test="${not empty form.id}">
+                        <label for="editEmp" class="form-label"> Return to  </label>
+                        <a id="editEmp" href="/employee/detail/${form.id}"> Employee Details </a>
+                    </c:if>
+                </div>
+
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
@@ -61,6 +69,12 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="profileImage" class="form-label">Profile Image</label>
+                    <input type="text" class="form-control" id="profileImage" name="profileImage"
+                        aria-describedby="profileImageHelp" value="${form.profileImage}">
+                </div>
+
+                <div class="mb-3">
                     <label for="vacationHours" class="form-label">Vacation Hours</label>
                     <input type="number" class="form-control" id="vacationHours" name="vacationHours"
                         aria-describedby="vacationHoursHelp" value="${form.vacationHours}">
@@ -73,8 +87,17 @@
                 </div>
 
                 <!-- in conjunction with EmployeeFormBean.java we get things working -->
-                <button type="submit" id="create_btn" class="btn btn-primary mt-3 me-2" onclick="formSubmit()">Create
-                    Account</button>
+                <!-- <button type="submit" id="create_btn" class="btn btn-primary mt-3 me-2" onclick="formSubmit()">Create
+                    Account</button> -->
+
+                <c:if test="${empty form.id}">
+                    <button type="submit" id="create_btn" class="btn btn-primary mt-3 me-2"
+                        onclick="formSubmit()">Create Employee</button>
+                </c:if>
+                <c:if test="${not empty form.id}">
+                    <button type="submit" id="edit_btn" class="btn btn-primary mt-3 me-2" onclick="formSubmit()">Edit
+                        Employee</button>
+                </c:if>
             </form>
         </div>
     </section>

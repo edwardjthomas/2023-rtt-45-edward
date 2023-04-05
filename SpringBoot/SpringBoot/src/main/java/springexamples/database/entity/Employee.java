@@ -46,6 +46,10 @@ public class Employee {
     @Column(name = "job_title")
     private String jobTitle;
 
+    // need to anotate later but we're working on something for 4/5
+    @Column(name = "profile_image_url")
+    private String profileImage;
+
     @Column(name = "vacation_hours")
     private Integer vacationHours;
 

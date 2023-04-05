@@ -31,6 +31,8 @@ public class EmployeeFormBean {
 
     private String extension;
 
+    private String profileImage;
+
     private Integer vacationHours;
 
     // will need to add officeid here as well

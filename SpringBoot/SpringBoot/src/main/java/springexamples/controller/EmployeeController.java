@@ -154,6 +154,8 @@ public class EmployeeController {
         form.setLastName(emp.getLastName());
         form.setExtension(emp.getExtension());
         form.setJobTitle(emp.getJobTitle());
+        // insert profileimage here
+        form.setProfileImage(emp.getProfileImage());
         form.setVacationHours(emp.getVacationHours());
         form.setOfficeId(emp.getOfficeId());
 
@@ -195,6 +197,8 @@ public class EmployeeController {
         emp.setExtension(form.getExtension());
         emp.setJobTitle(form.getJobTitle());
         emp.setVacationHours(form.getVacationHours());
+        // insert profile image here
+        emp.setProfileImage(form.getProfileImage());
         emp.setOfficeId(form.getOfficeId());
 
         employeeDAO.save(emp);

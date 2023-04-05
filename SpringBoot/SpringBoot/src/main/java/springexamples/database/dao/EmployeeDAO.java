@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 import springexamples.database.entity.Employee;
 
 import java.util.List;
+import java.util.Map;
 
 public interface EmployeeDAO extends JpaRepository<Employee, Long> {
 
@@ -26,7 +27,9 @@ public interface EmployeeDAO extends JpaRepository<Employee, Long> {
 
     List<Employee> findByLastNameContainingIgnoreCase(String lastsearch);
 
-
+    // doing this to replace the office id with the office city name
+    @Query(value = "select e.*, o.city from employees e, offices o where e.office_id = o.id;", nativeQuery = true)
+    List<Map<String, Object>> findWithOfficeName();
 
     // challenges because of course
     // write a native query in workbench that will be

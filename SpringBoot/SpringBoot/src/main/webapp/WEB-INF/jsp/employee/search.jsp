@@ -41,7 +41,7 @@
             <h4 class="pb-2">${employeesList.size()} Search Results</h4>
 
 
-            <table class="table">
+            <table class="table table-striped border">
                 <!-- thead specifices this is the header row for the table -->
                 <thead>
                     <tr>
@@ -52,6 +52,7 @@
                         <th scope="col">Last Name</th>
                         <th scope="col">Email</th>
                         <th scope="col">Job Title</th>
+                        <th scope="col">Office City</th>
                         <th scope="col">Extension</th>
                         <th scope="col">Vacation Hours</th>
                         <th scope="col">Edit</th>
@@ -70,6 +71,7 @@
                             <td scope="row">${emp.lastName}</td>
                             <td scope="row">${emp.email}</td>
                             <td scope="row">${emp.jobTitle}</td>
+                            <td scope="row">${emp.officeId}</td>
                             <td scope="row">${emp.extension}</td>
                             <td scope="row">${emp.vacationHours}</td>
                             <td><a href="/employee/edit/${emp.id}">Edit</a></td>
