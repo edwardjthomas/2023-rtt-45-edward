@@ -25,19 +25,6 @@
 </head>
 
 <body>
-    <!-- funny YouTube background video -->
-    <!-- looped by putting video into playlist with only the video playing -->
-    <div> <iframe width="560" height="315" id="backgroundVideo"
-            src="https://www.youtube.com/embed/KClnQgyPacU?autoplay=1&loop=1&list=PLnjowaTwz63G6pwPZk0hL2K-iiQH37-6R&mute=1&controls=0&showinfo=0&enablejsapi=1"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; mute; loop; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-    </div>
-    <!-- the opacity screen for the background to prevent the video from being too bright -->
-    <div
-        style="background-color:black; opacity: 80%; position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%;">
-    </div>
-
     <!-- navigation bar -->
     <nav id="headergradient" class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
@@ -54,10 +41,10 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="home">About</a>
+                        <a class="nav-link active" aria-current="page" href="home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="portfolio">Portfolio</a>
+                        <a class="nav-link" href="portfolio">Meet The Team</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="queue">Queue</a>
@@ -66,8 +53,10 @@
                         <a class="nav-link" href="commission">Commission Form & TOS</a>
                     </li>
                     <li class="nav-item">
-                        <!-- Use a button to pause/play the video with JavaScript -->
-                        <button id="videoButton" onclick="pauseVideo()">Pause Video</button>
+                        <a class="nav-link" href="create">Create a New Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="edit">Edit a Account</a>
                     </li>
                 </ul>
             </div>

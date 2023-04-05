@@ -1,4 +1,19 @@
+
+<!-- funny YouTube background video -->
+<!-- looped by putting video into playlist with only the video playing -->
+<div> <iframe width="560" height="315" id="backgroundVideo"
+        src="https://www.youtube.com/embed/KClnQgyPacU?autoplay=1&loop=1&list=PLnjowaTwz63G6pwPZk0hL2K-iiQH37-6R&mute=1&controls=0&showinfo=0&enablejsapi=1"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; mute; loop; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+</div>
+<!-- the opacity screen for the background to prevent the video from being too bright -->
+<div
+    style="background-color:black; opacity: 80%; position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%;">
+</div>
+
 <jsp:include page="include/header.jsp" />
+
 
 <!-- a card with a image for about information -->
 <div class="card mb-3 mx-auto"
