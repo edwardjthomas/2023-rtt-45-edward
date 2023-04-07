@@ -29,9 +29,6 @@ public class Services {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "name")
-    private String name;
-
     @Column(name = "image_url")
     private String image_Url;
 

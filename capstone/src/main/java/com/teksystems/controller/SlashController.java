@@ -1,17 +1,18 @@
 package com.teksystems.controller;
 
+import com.teksystems.database.dao.ServicesDAO;
 import com.teksystems.database.dao.UserDAO;
+import com.teksystems.database.entity.Services;
 import com.teksystems.database.entity.User;
 import com.teksystems.formbeans.UserFormBean;
+import io.micrometer.common.util.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -21,6 +22,9 @@ public class SlashController {
 
     @Autowired
     private UserDAO userDAO;
+
+    @Autowired
+    private ServicesDAO servicesDAO;
 
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public ModelAndView home() {
@@ -90,5 +94,42 @@ public class SlashController {
         ModelAndView response = new ModelAndView("signin");
         return response;
     }
+
+    @GetMapping("/details/{id}")
+    public ModelAndView details(@PathVariable Integer id) {
+        ModelAndView response = new ModelAndView("/details");
+
+        log.debug("In details controller method with id = " + id);
+        Services services = servicesDAO.findById(id);
+
+        // this allows for the employee details to appear on the details page
+        response.addObject("services", services);
+
+        log.debug(services + "");
+        return response;
+    }
+
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public ModelAndView serviceSearch(@RequestParam(required = false) String artistName) {
+        log.debug("In the search controller method with artistName = " + artistName);
+        ModelAndView response = new ModelAndView("/search");
+
+        List<Services> services = new ArrayList<>();
+
+        if (!StringUtils.isEmpty(artistName)) {
+            // if so run the query that works with both values
+            log.debug("artistName has a value");
+            services = servicesDAO.findByArtistNameContainingIgnoreCase(artistName);
+        }
+
+        response.addObject("servicesList", services);
+
+        // anything you add on to the search bar will be stored on the search.jsp page
+        response.addObject("artistNameParameter", artistName);
+
+        return response;
+    }
+
+
 
 }

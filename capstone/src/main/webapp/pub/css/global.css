@@ -12,13 +12,6 @@
             background-image: linear-gradient(to bottom, #87cefa, #ff000000);
         }
 
-        /* html tag selector */
-        h4 {
-
-            font-family: 'Exo';
-            color: aliceblue;
-
-        }
 
         #backgroundVideo {
             position: fixed;
@@ -54,4 +47,12 @@
         #videoButton:hover {
             background: #dddddd;
             color: black;
+        }
+
+        .light-color-bg {
+        background-color: #FFFFFF
+        }
+
+        .dark-color-bg {
+        background-color: #000000
         }

@@ -43,20 +43,3 @@ function onPlayerStateChange(event) {
 function stopVideo() {
     player.stopVideo();
 }
-
-// Get the video
-var video = document.getElementById("backgroundVideo");
-
-// Get the button
-var btn = document.getElementById("videoButton");
-
-// Pause and play the video, and change the button text
-function pauseVideo() {
-    if (video.paused) {
-        let video = document.getElementById("videoId")
-        video.contentWindow.postMessage('{"event":"command", "func":"pauseVideo", "args":""}', '*');
-    } else {
-        let video = document.getElementById("videoId")
-        video.contentWindow.postMessage('{"event":"command", "func":"playVideo", "args":""}', '*');
-    }
-}

@@ -35,9 +35,9 @@
             <select class="form-select" id="preferredContact" aria-label="Floating label select" name="preferredContact"
                 aria-describedby="preferredContactHelp" value="${form.preferredContact}">
                 <option selected>Please Select a Contact Method</option>
-                <option value="1">Twitter</option>
-                <option value="2">Discord</option>
-                <option value="3">E-Mail</option>
+                <option value="Twitter">Twitter</option>
+                <option value="Discord">Discord</option>
+                <option value="E-Mail">E-Mail</option>
             </select>
             <label for="preferredContact">Preferred Contact Method</label>
         </div>
