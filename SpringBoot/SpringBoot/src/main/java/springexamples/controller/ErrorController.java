@@ -16,8 +16,6 @@ import java.util.Map;
 @ControllerAdvice
 public class ErrorController {
 
-
-
     @ExceptionHandler(Exception.class)
     public ModelAndView handleAllException(HttpServletRequest request, Exception ex) {
         String requestUrl = getRequestURL(request);
@@ -29,7 +27,8 @@ public class ErrorController {
 
         String stackTrace = getHTMLStackTrace(ExceptionUtils.getStackFrames(ex));
 
-        // message is the request URL if it was an error page, otherwise it can be a message
+        // message is the request URL if it was an error page, otherwise it can be a
+        // message
         // from the class that calls it
         model.addObject("requestUrl", requestUrl);
         model.addObject("message", ex.getMessage());

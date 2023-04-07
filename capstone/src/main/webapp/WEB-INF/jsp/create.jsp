@@ -1,42 +1,49 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<jsp:include page="include/header.jsp" />
+    <jsp:include page="include/header.jsp" />
 
-<form>
-    <!-- gather the information of a new user via username, password, email, name, and contact method -->
-    <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Username</label>
-    </div>
+    <form action="/createSubmit">
+        <!-- gather the information of a new user via username, password, email, name, and contact method -->
+        <input type="hidden" name="id" value="${form.id}" />
 
-    <div class="form-floating mb-3">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-        <label for="floatingPassword">Password</label>
-    </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="username" placeholder="@username" name="username"
+                aria-describedby="usernameHelp" value="${form.username}">
+            <label for="username">Username</label>
+        </div>
 
-    <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Email address</label>
-    </div>
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="password" placeholder="Password" name="password"
+                aria-describedby="passwordHelp" value="${form.password}">
+            <label for="password">Password</label>
+        </div>
 
-    <div class="form-floating mb-3">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-        <label for="floatingPassword">Name</label>
-    </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email"
+                aria-describedby="emailHelp" value="${form.email}">
+            <label for="email">Email address</label>
+        </div>
 
-    <!-- dropdown menu for preferred contact method -->
-    <div class="form-floating mb-3">
-        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-            <option selected>Please Select a Contact Method</option>
-            <option value="1">Twitter</option>
-            <option value="2">Discord</option>
-            <option value="3">E-Mail</option>
-        </select>
-        <label for="floatingSelect">Preferred Contact Method</label>
-    </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="name" placeholder="name" name="name" aria-describedby="nameHelp"
+                value="${form.name}">
+            <label for="name">Name</label>
+        </div>
 
-    <div class="col-12">
-        <button type="submit" class="btn btn-primary" onclick="formSubmit()">Confirm Changes</button>
-    </div>
-</form>
-<jsp:include page="include/footer.jsp" />
+        <!-- dropdown menu for preferred contact method -->
+        <div class="form-floating mb-3">
+            <select class="form-select" id="preferredContact" aria-label="Floating label select" name="preferredContact"
+                aria-describedby="preferredContactHelp" value="${form.preferredContact}">
+                <option selected>Please Select a Contact Method</option>
+                <option value="1">Twitter</option>
+                <option value="2">Discord</option>
+                <option value="3">E-Mail</option>
+            </select>
+            <label for="preferredContact">Preferred Contact Method</label>
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary" onclick="formSubmit()">Confirm Changes</button>
+        </div>
+    </form>
+    <jsp:include page="include/footer.jsp" />

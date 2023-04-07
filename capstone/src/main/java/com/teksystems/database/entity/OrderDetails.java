@@ -10,17 +10,17 @@ import lombok.ToString;
 @Entity
 @ToString
 @Table(name = "orderdetails")
-public class orderdetails {
+public class OrderDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "order_id")
+    @Column(name = "order_id", insertable = false, updatable = false)
     private Integer orderId;
 
-    @Column(name = "services_id")
+    @Column(name = "services_id", insertable = false, updatable = false)
     private Integer servicesId;
 
 }

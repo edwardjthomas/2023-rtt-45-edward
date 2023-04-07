@@ -144,7 +144,8 @@ public class EmployeeController {
         Employee emp = employeeDAO.findById(id);
         EmployeeFormBean form = new EmployeeFormBean();
 
-        // this sets the emplyee id and all other employee fields on the form object to pass through the jsp through the model
+        // this sets the emplyee id and all other employee fields on the form object to
+        // pass through the jsp through the model
         // allows us to set the id for the edit on the create.jsp page
         form.setId(emp.getId());
         // in the case of an edit page, make sure that the form is being filled out by
@@ -171,12 +172,18 @@ public class EmployeeController {
 
     // getting form submission button to work more efficiently by creating a
     // createSubmit page on the employee/create page
-    @GetMapping("/createSubmit")
+    @PostMapping("/createSubmit")
     public ModelAndView createSubmit(EmployeeFormBean form) {
         ModelAndView response = new ModelAndView("employee/create");
 
         log.debug("!!!!!!!!!!!!!!!!!!!!!!!!!! In the employee / create controller method.");
         log.debug(form.toString());
+
+        // if you haven't done it already, copy these two lines of code to retain the
+        // submission inside the createSubmit page
+        List<Office> offices = officeDao.getAllOffices();
+        // this is an interaction with the create page for the select for offices
+        response.addObject("offices", offices);
 
         // this would be creating a new database entity
         // which will populate it with the incoming data from the submitted form
@@ -202,14 +209,13 @@ public class EmployeeController {
         emp.setOfficeId(form.getOfficeId());
 
         employeeDAO.save(emp);
+
         // to make sure this reflects the changes made on the page
         response.addObject("form", form);
 
-        // if you haven't done it already, copy these two lines of code to retain the
-        // submission inside the createSubmit page
-        List<Office> offices = officeDao.getAllOffices();
-        // this is an interaction with the create page for the select for offices
-        response.addObject("offices", offices);
+        // simply put it redirects us back to employee edit after we do the employee submit step
+        // response.setViewName("redirect:/employee/edit/" + emp.getId());
+
 
         return response;
     }

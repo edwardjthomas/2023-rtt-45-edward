@@ -17,7 +17,7 @@
     <section class="pt-5 pb-5 bg-light-color">
         <div class="container mt-3">
             <!-- the action tag here indicates "when the form is submitted, submit it to this url here" -->
-            <form action="/employee/createSubmit">
+            <form action="/employee/createSubmit" method="POST">
                 <!-- we have to add the id that we established from the employeecontroller as a hidden value underneath the form call -->
                 <input type="hidden" name="id" value="${form.id}" />
                 

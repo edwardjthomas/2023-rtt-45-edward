@@ -1,4 +1,34 @@
 package com.teksystems.database.entity;
 
-public class user {
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@Entity
+@ToString
+@Table(name = "user")
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
+
+    @Column(name = "username")
+    private String username;
+
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "preferred_contact")
+    private String preferredContact;
 }

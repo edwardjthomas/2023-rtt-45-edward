@@ -21,13 +21,14 @@ public class SlashController {
     private EmployeeDAO employeeDAO;
 
     // an example of @RequestMapping with Multiple URIs
-    // keep an eye on using the {} on the value = to indicate the multiple names users can input to get you to that same page
+    // keep an eye on using the {} on the value = to indicate the multiple names
+    // users can input to get you to that same page
     @RequestMapping(value = { "/index", "/", "/index.html" }, method = RequestMethod.GET)
     public ModelAndView index() {
         log.debug("In the index controller method.");
         ModelAndView response = new ModelAndView("index");
 
-    //  won't be able to see trace for the moment
+        // won't be able to see trace for the moment
         log.trace("This is a trace log example");
         log.debug("This is a debug log example");
         log.info("This is an info log example");
@@ -37,7 +38,8 @@ public class SlashController {
         return response;
     }
 
-    // GetMapping shortens RequestMapping where you simply have to use the @ call and put the /page inside the ()
+    // GetMapping shortens RequestMapping where you simply have to use the @ call
+    // and put the /page inside the ()
     // shortcut for @RequestMapping (method = RequestMethod.GET).
     @GetMapping("/signup")
     public ModelAndView signup() {
