@@ -1,4 +1,3 @@
-
 <!-- funny YouTube background video -->
 <!-- looped by putting video into playlist with only the video playing -->
 <div> <iframe width="560" height="315" id="backgroundVideo"

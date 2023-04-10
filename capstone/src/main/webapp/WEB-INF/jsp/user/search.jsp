@@ -3,7 +3,7 @@
 
 
     <!-- when working in new folders from main folders make sure to use ../ in front of your file names to fix the weird servlet exception -->
-    <jsp:include page="include/header.jsp" />
+    <jsp:include page="../include/header.jsp" />
 
     <section class="pt-5 pb-5 light-color-bg">
         <div class="container text-center">
@@ -72,4 +72,4 @@
         </div>
     </section>
 
-    <jsp:include page="include/footer.jsp" />
+    <jsp:include page="../include/footer.jsp" />

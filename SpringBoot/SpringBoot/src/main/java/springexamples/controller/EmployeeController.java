@@ -4,6 +4,7 @@ import io.micrometer.common.util.StringUtils;
 import jakarta.websocket.server.PathParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -22,6 +23,7 @@ import java.util.List;
 // makes it so you have to have "/employee" in front of the links that go to all
 // pages of that respective controller
 @RequestMapping("/employee")
+@PreAuthorize("hasAuthority('ADMIN')")
 public class EmployeeController {
 
     @Autowired
@@ -213,9 +215,9 @@ public class EmployeeController {
         // to make sure this reflects the changes made on the page
         response.addObject("form", form);
 
-        // simply put it redirects us back to employee edit after we do the employee submit step
+        // simply put it redirects us back to employee edit after we do the employee
+        // submit step
         // response.setViewName("redirect:/employee/edit/" + emp.getId());
-
 
         return response;
     }

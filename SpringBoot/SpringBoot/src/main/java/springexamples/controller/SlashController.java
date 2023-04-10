@@ -76,12 +76,13 @@ public class SlashController {
         user.setEmail(form.getEmail());
         user.setFullName(form.getFullName());
 
-        // this is needed by spring security to encrypt passwords as the user is being created. (4/7)
+        // this is needed by spring security to encrypt passwords as the user is being
+        // created. (4/7)
         String encryptedPassword = passwordEncoder.encode(form.getPassword());
         user.setPassword(encryptedPassword);
 
-
-        // doing it this way will have not not require to do the many to ones and the ones to manys
+        // doing it this way will have not not require to do the many to ones and the
+        // ones to manys
         // save our user .. when hibernate saves this user it will auto generate the ID
         // AND it will populate the fild in the user entity
         userDAO.save(user);
@@ -89,14 +90,14 @@ public class SlashController {
         // create our user role object
         UserRole userRole = new UserRole();
         userRole.setRoleName("USER");
-        // so when we go to set the user id FK on the user role entity the user id has been populated already.
+        // so when we go to set the user id FK on the user role entity the user id has
+        // been populated already.
         userRole.setUserId((user.getId()));
 
         // the user is created first
         // THEN the userRole is created
         // they both finish before the controller method finishes
         userRoleDAO.save(userRole);
-
 
         log.debug(form.toString());
 

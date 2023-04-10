@@ -1,4 +1,4 @@
-package springexamples.security;
+package com.teksystems.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -7,10 +7,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import springexamples.database.dao.UserDAO;
-import springexamples.database.dao.UserRoleDAO;
-import springexamples.database.entity.User;
-import springexamples.database.entity.UserRole;
+import com.teksystems.database.dao.UserDAO;
+import com.teksystems.database.dao.UserRoleDAO;
+import com.teksystems.database.entity.User;
+import com.teksystems.database.entity.UserRole;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -27,7 +27,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userDao.findByEmail(username);
+        User user = userDao.findByUsername(username);
 
         // this first checks if the user is not found in the database ( if it was found
         // the user object would not be null)

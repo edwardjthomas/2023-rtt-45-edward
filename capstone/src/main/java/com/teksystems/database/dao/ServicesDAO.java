@@ -6,8 +6,7 @@ import com.teksystems.database.entity.Services;
 
 import java.util.List;
 
-
-public interface ServicesDAO extends JpaRepository<Services, Long>  {
+public interface ServicesDAO extends JpaRepository<Services, Long> {
 
     @Query("FROM Services s")
     List<Services> getAllServices();

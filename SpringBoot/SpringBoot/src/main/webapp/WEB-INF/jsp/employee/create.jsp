@@ -20,10 +20,10 @@
             <form action="/employee/createSubmit" method="POST">
                 <!-- we have to add the id that we established from the employeecontroller as a hidden value underneath the form call -->
                 <input type="hidden" name="id" value="${form.id}" />
-                
+
                 <div class=" mb-3">
                     <c:if test="${not empty form.id}">
-                        <label for="editEmp" class="form-label"> Return to  </label>
+                        <label for="editEmp" class="form-label"> Return to </label>
                         <a id="editEmp" href="/employee/detail/${form.id}"> Employee Details </a>
                     </c:if>
                 </div>

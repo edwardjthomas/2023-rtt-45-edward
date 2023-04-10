@@ -1,8 +1,10 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+// Due to needing to create Spring Security compatibility this has been removed
+
+<% @taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
     <jsp:include page="include/header.jsp" />
 
-    <form method="POST" action="/create">
+    <form action="/createSubmit">
         <!-- gather the information of a new user via username, password, email, name, and contact method -->
         <input type="hidden" name="id" value="${form.id}" />
 
@@ -16,12 +18,6 @@
             <input type="password" class="form-control" id="password" placeholder="Password" name="password"
                 aria-describedby="passwordHelp" value="${form.password}">
             <label for="password">Password</label>
-        </div>
-
-        <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password"
-                name="confirmPassword" aria-describedby="confirmPasswordHelp" value="${form.password}">
-            <label for="confirmPassword">Confirm Password</label>
         </div>
 
         <div class="form-floating mb-3">
@@ -49,7 +45,7 @@
         </div>
 
         <div class="col-12">
-            <button type="submit" id="create_btn" class="btn btn-primary">Confirm Changes</button>
+            <button type="submit" class="btn btn-primary" onclick="formSubmit()">Confirm Changes</button>
         </div>
     </form>
     <jsp:include page="include/footer.jsp" />

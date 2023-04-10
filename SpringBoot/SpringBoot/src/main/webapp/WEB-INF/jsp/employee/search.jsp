@@ -23,9 +23,9 @@
                                 aria-label="Employee First Name" aria-describedby="search"
                                 value="${firstsearchParameter}">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" name="lastName"
-                                    placeholder="Employee Last Name" aria-label="Employee Last Name"
-                                    aria-describedby="search" value="${lastsearchParameter}">
+                                <input type="text" class="form-control" name="lastName" placeholder="Employee Last Name"
+                                    aria-label="Employee Last Name" aria-describedby="search"
+                                    value="${lastsearchParameter}">
                             </div>
                         </div>
                         <button class="btn btn-outline-secondary" id="search">Search</button>

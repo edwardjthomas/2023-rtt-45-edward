@@ -1,4 +1,4 @@
-package springexamples.config;
+package com.teksystems.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,7 +28,7 @@ public class SecurityConfig {
                 // directory/** means ANY directory underneath is fair game
                 // you can put any number of URLS that you want to secure here with a comma
                 // sepearting them,
-                .authorizeHttpRequests().requestMatchers("/employee/**", "/product/**", "/cart/**").authenticated()
+                .authorizeHttpRequests().requestMatchers("/user/**").authenticated()
                 // everything else in the application is going to permitted
                 .anyRequest().permitAll()
                 .and()
@@ -49,13 +49,12 @@ public class SecurityConfig {
                 // them to the
                 // secured url they requested
                 .defaultSuccessUrl("/")
-                // this is how you implement log out
+                // this is how you get logout working
                 .and()
                 .logout()
                 .invalidateHttpSession(true)
                 .logoutUrl("/login/logout")
                 .logoutSuccessUrl("/");
-
         return http.build();
     }
 

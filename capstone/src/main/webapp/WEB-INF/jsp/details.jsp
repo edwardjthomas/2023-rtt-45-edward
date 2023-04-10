@@ -1,6 +1,6 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<jsp:include page="include/header.jsp" />
+    <jsp:include page="include/header.jsp" />
 
     <section class="pt-5 pb-5 light-color-bg">
         <div class="container text-center">

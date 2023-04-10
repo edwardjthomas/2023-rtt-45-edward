@@ -25,25 +25,30 @@ public class FileUploadController {
         return response;
     }
 
-    // you can use the same url so long as you have two different mapping types such as GetMapping and PostMapping
+    // you can use the same url so long as you have two different mapping types such
+    // as GetMapping and PostMapping
     @PostMapping("/fileupload")
     public ModelAndView fileUpload(@RequestParam("fileUpload") MultipartFile fileUpload) throws IOException {
         ModelAndView response = new ModelAndView("fileupload");
 
         // the . stands for the current project folder, in this example, springboot
         // the target location of where i want the file to be saved
-        // intellij considered the root path to be folder inside the RTT-45 folder (springboot)
-        // so by using ./ we are saying start at the project root and build the path to where we want to save the file
+        // intellij considered the root path to be folder inside the RTT-45 folder
+        // (springboot)
+        // so by using ./ we are saying start at the project root and build the path to
+        // where we want to save the file
         // notice we are using a filesystem address and not a URL address
         File target = new File("./src/main/webapp/pub/images/" + fileUpload.getOriginalFilename());
         log.debug(target.getAbsolutePath());
 
         // this line is a convenience method provided from commons-io library
         // the browser offers the file to be uploaded as an inputstream to the server
-        // this method does all of the work reading the file upload input stream and writing it out to a target file on the filesystem
+        // this method does all of the work reading the file upload input stream and
+        // writing it out to a target file on the filesystem
         FileUtils.copyInputStreamToFile(fileUpload.getInputStream(), target);
 
-        // this is just code that will display the file on the page after it has been uploaded.
+        // this is just code that will display the file on the page after it has been
+        // uploaded.
         // it adds the url to the file to our model to pass to the jsp page
         // notice that we are using a URL address and not a filesystem address
         response.addObject("fileUrl", "/pub/images/" + fileUpload.getOriginalFilename());
