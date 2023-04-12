@@ -18,6 +18,12 @@
         <div class="container mt-3">
             <!-- the action tag here indicates "when the form is submitted, submit it to this url here" -->
             <form action="/employee/createSubmit" method="POST">
+            <!-- to confirm a successful submission alert in conjunction with employeecontroller createSubmit postmapping (4/11) -->
+                <c:if test="${success}">
+                    <div class="alert alert-success" role="alert">
+                      Employee Created
+                    </div>
+                </c:if>
                 <!-- we have to add the id that we established from the employeecontroller as a hidden value underneath the form call -->
                 <input type="hidden" name="id" value="${form.id}" />
 
@@ -32,18 +38,34 @@
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
                         value="${form.email}">
+                        <!-- trying to fit validation inside the jsp file for email (4/11) -->
+                        <c:if test="${bindingResult.hasFieldErrors('email')}">
+                            <c:forEach items="${bindingResult.getFieldErrors('email')}" var="error">
+                                <div style="color:red;">${error.getDefaultMessage()}</div>
+                            </c:forEach>
+                        </c:if>
                 </div>
 
                 <div class="mb-3">
                     <label for="firstName" class="form-label">First Name</label>
                     <input type="text" class="form-control" id="firstName" name="firstName"
                         aria-describedby="firstNameHelp" value="${form.firstName}">
+                        <c:if test="${bindingResult.hasFieldErrors('firstName')}">
+                            <c:forEach items="${bindingResult.getFieldErrors('firstName')}" var="error">
+                                <div style="color:red;">${error.getDefaultMessage()}</div>
+                            </c:forEach>
+                        </c:if>
                 </div>
 
                 <div class="mb-3">
                     <label for="lastName" class="form-label">Last Name</label>
                     <input type="text" class="form-control" id="lastName" name="lastName"
                         aria-describedby="lastNameHelp" value="${form.lastName}">
+                        <c:if test="${bindingResult.hasFieldErrors('lastName')}">
+                            <c:forEach items="${bindingResult.getFieldErrors('lastName')}" var="error">
+                                <div style="color:red;">${error.getDefaultMessage()}</div>
+                            </c:forEach>
+                        </c:if>
                 </div>
 
                 <!-- playing with office entity and adding the office stuff from the officedao and office entity -->
@@ -66,24 +88,44 @@
                     <label for="jobTitle" class="form-label">Job Title</label>
                     <input type="text" class="form-control" id="jobTitle" name="jobTitle"
                         aria-describedby="jobTitleHelp" value="${form.jobTitle}">
+                        <c:if test="${bindingResult.hasFieldErrors('jobTitle')}">
+                            <c:forEach items="${bindingResult.getFieldErrors('jobTitle')}" var="error">
+                                <div style="color:red;">${error.getDefaultMessage()}</div>
+                            </c:forEach>
+                        </c:if>
                 </div>
 
                 <div class="mb-3">
                     <label for="profileImage" class="form-label">Profile Image</label>
                     <input type="text" class="form-control" id="profileImage" name="profileImage"
                         aria-describedby="profileImageHelp" value="${form.profileImage}">
+                        <c:if test="${bindingResult.hasFieldErrors('profileImage')}">
+                            <c:forEach items="${bindingResult.getFieldErrors('profileImage')}" var="error">
+                                <div style="color:red;">${error.getDefaultMessage()}</div>
+                            </c:forEach>
+                        </c:if>
                 </div>
 
                 <div class="mb-3">
                     <label for="vacationHours" class="form-label">Vacation Hours</label>
                     <input type="number" class="form-control" id="vacationHours" name="vacationHours"
                         aria-describedby="vacationHoursHelp" value="${form.vacationHours}">
+                        <c:if test="${bindingResult.hasFieldErrors('vacationHours')}">
+                            <c:forEach items="${bindingResult.getFieldErrors('vacationHours')}" var="error">
+                                <div style="color:red;">${error.getDefaultMessage()}</div>
+                            </c:forEach>
+                        </c:if>
                 </div>
 
                 <div class="mb-3">
                     <label for="extension" class="form-label">Extension</label>
                     <input type="text" class="form-control" id="extension" name="extension"
                         aria-describedby="extensionHelp" value="${form.extension}">
+                        <c:if test="${bindingResult.hasFieldErrors('extension')}">
+                            <c:forEach items="${bindingResult.getFieldErrors('extension')}" var="error">
+                                <div style="color:red;">${error.getDefaultMessage()}</div>
+                            </c:forEach>
+                        </c:if>
                 </div>
 
                 <!-- in conjunction with EmployeeFormBean.java we get things working -->

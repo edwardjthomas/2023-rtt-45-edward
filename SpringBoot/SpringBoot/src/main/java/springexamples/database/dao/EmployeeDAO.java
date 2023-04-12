@@ -3,6 +3,7 @@ package springexamples.database.dao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import springexamples.database.entity.Employee;
+import springexamples.database.entity.User;
 
 import java.util.List;
 import java.util.Map;
@@ -48,4 +49,8 @@ public interface EmployeeDAO extends JpaRepository<Employee, Long> {
 
     // another example inside @PathVariable
     Employee findById(Integer id);
+
+    boolean existsByEmail(String email);
+
+    Employee findByEmail(String email);
 }

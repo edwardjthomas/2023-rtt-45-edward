@@ -1,6 +1,7 @@
         /* background image for extra */
         body {
-            background-image: url('https://scontent-atl3-2.xx.fbcdn.net/v/t31.18172-8/705298_536023636426394_263518077_o.jpg?_nc_cat=104&ccb=1-7&_nc_sid=19026a&_nc_ohc=3VyBRAhXJgMAX_fLIGD&_nc_ht=scontent-atl3-2.xx&oh=00_AfCMN7rzLM4-FNcqGvDAjEAi7oTHfzzymmnKFdR-J2Xttw&oe=644511EC');
+            /* background-image: url('https://scontent-atl3-2.xx.fbcdn.net/v/t31.18172-8/705298_536023636426394_263518077_o.jpg?_nc_cat=104&ccb=1-7&_nc_sid=19026a&_nc_ohc=3VyBRAhXJgMAX_fLIGD&_nc_ht=scontent-atl3-2.xx&oh=00_AfCMN7rzLM4-FNcqGvDAjEAi7oTHfzzymmnKFdR-J2Xttw&oe=644511EC'); */
+            background-image: url('https://i.imgur.com/GKcgWFZ.png');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
@@ -42,6 +43,12 @@
             background: #00000088;
             color: #ffffff;
             cursor: pointer;
+        }
+
+        img {
+            width: auto;
+            height: auto;
+            object-fit: contain;
         }
 
         #videoButton:hover {

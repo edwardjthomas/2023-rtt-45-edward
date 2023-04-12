@@ -3,6 +3,11 @@
     <jsp:include page="include/header.jsp" />
 
     <form method="POST" action="/create">
+        <c:if test="${success}">
+            <div class="alert alert-success" role="alert">
+              New User Created
+            </div>
+        </c:if>
         <!-- gather the information of a new user via username, password, email, name, and contact method -->
         <input type="hidden" name="id" value="${form.id}" />
 

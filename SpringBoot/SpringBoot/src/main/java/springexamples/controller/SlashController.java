@@ -1,5 +1,6 @@
 package springexamples.controller;
 
+import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -15,6 +16,7 @@ import springexamples.database.dao.UserRoleDAO;
 import springexamples.database.entity.User;
 import springexamples.database.entity.UserRole;
 import springexamples.formbeans.CreateUserFormBean;
+import springexamples.security.AuthenticatedUserService;
 
 // this is not considered a rest controller
 // RESTFul applications typically return data in JSON or XML format
@@ -35,6 +37,9 @@ public class SlashController {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private AuthenticatedUserService authenticatedUserService;
 
     // an example of @RequestMapping with Multiple URIs
     // keep an eye on using the {} on the value = to indicate the multiple names
@@ -66,8 +71,9 @@ public class SlashController {
     }
 
     // you can test spring security here on the signup page (4/7)
+    // added HttpSession session for AuthenticatedUserService addon (4/11)
     @PostMapping("/signup")
-    public ModelAndView setup(CreateUserFormBean form) {
+    public ModelAndView setup(CreateUserFormBean form, HttpSession session) {
 
         ModelAndView response = new ModelAndView("signup");
         log.debug("In the signup controller method.");
@@ -98,6 +104,11 @@ public class SlashController {
         // THEN the userRole is created
         // they both finish before the controller method finishes
         userRoleDAO.save(userRole);
+
+        // very important that this line of code is after both the user and user role is saved to the database (4/11) in conjunction with AuthenticatedUserService
+        // authenticate the user that was just created
+        // session that was mention above is used here
+        authenticatedUserService.changeLoggedInUsername(session, form.getEmail(), form.getPassword());
 
         log.debug(form.toString());
 

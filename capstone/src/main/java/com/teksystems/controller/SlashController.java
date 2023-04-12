@@ -132,6 +132,16 @@ public class SlashController {
 
         log.debug(form.toString());
 
+        // to make sure this reflects the changes made on the page
+        response.addObject("form", form);
+
+        // now we add a bool to the model so we can add a success message on the page in conjunction with create.jsp (4/11)
+        response.addObject("success", true);
+
+        // set the employee id on the form bean so it triggers the page to be an edit (4/11)
+        // this is just to be nice to put the page into edit mode because if the id is present in the form its considered to be an edit
+        form.setId(user.getId());
+
         return response;
     }
 

@@ -51,6 +51,8 @@ public class UserController {
         // anything you add on to the search bar will be stored on the search.jsp page
         response.addObject("artistNameParameter", artistName);
 
+
+
         return response;
     }
 }
