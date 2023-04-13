@@ -1,38 +1,3 @@
-public class Monster {
-
-    public Monster() {
-
-    }
-
-    void attack() {
-        System.out.println("!^_&^$@+%$* I don't know how to attack!");
-    }
-
-}
-
-public class FireMonster extends Monster {
-
-    @Override
-    void attack() {
-        System.out.println("Attack with Fire!");
-    }
-
-}
-
-public class WaterMonster extends Monster {
-    @Override
-    void attack() {
-        System.out.println("Attack with water!");
-    }
-}
-
-public class StoneMonster extends Monster {
-    @Override
-    void attack() {
-        System.out.println("Attack with stones!");
-    }
-}
-
 public class TestMonster {
     public static void main(String[] args) {
         // Program at the "interface" defined in the superclass.
