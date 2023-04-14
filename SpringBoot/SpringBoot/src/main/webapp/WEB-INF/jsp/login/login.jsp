@@ -1,3 +1,5 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <jsp:include page="../include/header.jsp" />
 
 <section class="pt-5 pb-5" style="background-color:rgb(218, 225, 234)">
@@ -5,6 +7,23 @@
         <h2 class="m-0">Login</h2>
     </div>
 </section>
+
+
+<!-- gives us that invalid username and/or password message (4/14) -->
+
+<c:if test="${param['error'] != null}">
+    <section class="pt-5 bg-light-color">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-10 col-md-7 col-xl-5">
+                    <div class="alert alert-danger" role="alert">
+                        Invalid Username or Password
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</c:if>
 
 <section class="pt-5 pb-5">
     <div class="container">
