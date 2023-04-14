@@ -1,10 +1,14 @@
 package springexamples.controller;
 
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,7 +48,7 @@ public class SlashController {
     // an example of @RequestMapping with Multiple URIs
     // keep an eye on using the {} on the value = to indicate the multiple names
     // users can input to get you to that same page
-    @RequestMapping(value = { "/index", "/", "/index.html" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/index", "/", "/index.html"}, method = RequestMethod.GET)
     public ModelAndView index() {
         log.debug("In the index controller method.");
         ModelAndView response = new ModelAndView("index");
@@ -73,10 +77,28 @@ public class SlashController {
     // you can test spring security here on the signup page (4/7)
     // added HttpSession session for AuthenticatedUserService addon (4/11)
     @PostMapping("/signup")
-    public ModelAndView setup(CreateUserFormBean form, HttpSession session) {
+    public ModelAndView setup(@Valid CreateUserFormBean form, BindingResult bindingResult, HttpSession session) {
 
         ModelAndView response = new ModelAndView("signup");
         log.debug("In the signup controller method.");
+
+        response.addObject("form", form);
+
+        if (StringUtils.equals(form.getPassword(), form.getConfirmPassword()) == false) {
+            bindingResult.rejectValue("confirmPassword", "error.confirmPassword", "Passwords do not match");
+        }
+
+        if (bindingResult.hasErrors()) {
+            for (FieldError error : bindingResult.getFieldErrors()) {
+                log.debug("Validation Error on field: " + error.getField());
+
+                log.debug("Validation Error Message: " + error.getDefaultMessage());
+            }
+
+            response.addObject("bindingResult", bindingResult);
+
+            return response;
+        }
 
         User user = new User();
         user.setEmail(form.getEmail());

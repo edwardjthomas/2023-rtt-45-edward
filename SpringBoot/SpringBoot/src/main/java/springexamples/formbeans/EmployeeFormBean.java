@@ -37,8 +37,8 @@ public class EmployeeFormBean {
     // best way to be safe about securing database things would be through the formbean (here)
     @NotEmpty(message = "Email address is required.")
     @Length(max = 100, message = "Email cannot be longer than 100 characters")
-    @Pattern(regexp=".+@.+\\.[a-z]+", message = "Invalid email format")
-    @EmailUnique(message= "Email already exists in database")
+    @Pattern(regexp = ".+@.+\\.[a-z]+", message = "Invalid email format")
+    @EmailUnique(message = "Email already exists in database")
     private String email;
 
     @NotEmpty(message = "First Name is required.")
@@ -56,8 +56,8 @@ public class EmployeeFormBean {
 
     private String profileImage;
 
-    @Max(value=100, message = "You can not have more than 100 vacation hours.")
-    @Min(value=0, message = "You can not have less than 0 vacation hours.")
+    @Max(value = 100, message = "You can not have more than 100 vacation hours.")
+    @Min(value = 0, message = "You can not have less than 0 vacation hours.")
     private Integer vacationHours;
 
     // will need to add officeid here as well
