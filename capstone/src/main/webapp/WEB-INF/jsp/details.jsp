@@ -19,7 +19,7 @@
                 </tr>
                 <tr>
                     <td>Artist</td>
-                    <td><a href="/search?artistName=${services.artistName}">${services.artistName}</a></td>
+                    <td><a href="/user/search?artistName=${services.artistName}">${services.artistName}</a></td>
                 </tr>
                 <tr>
                     <td>Type of Commissions</td>
