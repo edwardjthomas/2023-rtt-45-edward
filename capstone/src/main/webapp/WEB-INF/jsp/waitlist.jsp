@@ -9,7 +9,7 @@
             <th scope="col">#</th>
             <th scope="col">Username</th>
             <th scope="col">Start Date</th>
-            <th scope="col">Preferred Contact</th>
+            <th scope="col">Commission Status</th>
         </tr>
     </thead>
     <tbody>
@@ -52,7 +52,7 @@
             <th scope="col">#</th>
             <th scope="col">Username</th>
             <th scope="col">Start Date</th>
-            <th scope="col">Preferred Contact</th>
+            <th scope="col">Commission Status</th>
         </tr>
     </thead>
     <tbody>
@@ -95,7 +95,7 @@
             <th scope="col">#</th>
             <th scope="col">Username</th>
             <th scope="col">Start Date</th>
-            <th scope="col">Preferred Contact</th>
+            <th scope="col">Commission Status</th>
         </tr>
     </thead>
     <tbody>
@@ -138,7 +138,7 @@
             <th scope="col">#</th>
             <th scope="col">Username</th>
             <th scope="col">Start Date</th>
-            <th scope="col">Preferred Contact</th>
+            <th scope="col">Commission Status</th>
         </tr>
     </thead>
     <tbody>
@@ -181,7 +181,7 @@
             <th scope="col">#</th>
             <th scope="col">Username</th>
             <th scope="col">Start Date</th>
-            <th scope="col">Preferred Contact</th>
+            <th scope="col">Commission Status</th>
         </tr>
     </thead>
     <tbody>

@@ -3,7 +3,7 @@
 
 
     <!-- when working in new folders from main folders make sure to use ../ in front of your file names to fix the weird servlet exception -->
-    <jsp:include page="../include/header.jsp" />
+    <jsp:include page="include/header.jsp" />
 
     <section class="pt-5 pb-5 light-color-bg">
         <div class="container text-center">
@@ -19,10 +19,10 @@
                         <div class="input-group mb-3">
                             <!-- if you want the form to submit you remove type = "button" -->
                             <!-- you need to give input tag a name if you want to search for something on the page. it will reflect on the url if the search submit was successful -->
-                            <input type="text" class="form-control" name="artistName"
-                                placeholder="Choose between Ame, Yuki, Asa, Yoru, or Bufu"
-                                aria-label="Choose between Ame, Yuki, Asa, Yoru, or Bufu" aria-describedby="search"
-                                value="${artistNameParameter}">
+                            <input type="text" class="form-control" name="type"
+                                placeholder="Art, Animation, Music, 3D Modeling, or Voice Over"
+                                aria-label="Art, Animation, Music, 3D Modeling, or Voice Over" aria-describedby="search"
+                                value="${typeParameter}">
                         </div>
                         <button class="btn btn-outline-secondary" id="search">Search</button>
                     </form>
@@ -34,7 +34,7 @@
     <section class="pt-5 pb-5 light-color-bg">
         <div class="container text-center">
 
-            <h4 class="pb-2">${servicesList.size()} Guild Member Selected!</h4>
+            <h4 class="pb-2">${servicesList.size()} Guild Member(s) Selected!</h4>
 
 
             <table class="table table-striped border">
@@ -72,4 +72,4 @@
         </div>
     </section>
 
-    <jsp:include page="../include/footer.jsp" />
+    <jsp:include page="include/footer.jsp" />

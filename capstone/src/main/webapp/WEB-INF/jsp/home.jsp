@@ -2,7 +2,7 @@
 <!-- looped by putting video into playlist with only the video playing -->
 <!-- 4/16 changed video to another opening -->
 <div> <iframe width="560" height="315" id="backgroundVideo"
-        src="https://www.youtube.com/embed/uhD8P7_llf0?autoplay=1&loop=1&list=PLnjowaTwz63G6pwPZk0hL2K-iiQH37-6R&mute=1&controls=0&showinfo=0&enablejsapi=1"
+        src="https://www.youtube.com/embed/Aifr1B0SukU?autoplay=1&loop=1&list=PLnjowaTwz63G6pwPZk0hL2K-iiQH37-6R&mute=1&controls=0&showinfo=0&enablejsapi=1"
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; mute; loop; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen></iframe>
@@ -34,17 +34,15 @@
         <div class="card-body">
             <h3 class="text-center card-title">Bufu Guild has Specialists for:</h3>
             <ul class="text-center list-group">
-                <li class="list-group-item">Art by Ame</li>
-                <li class="list-group-item">Live 2D Animation by Yuki</li>
-                <li class="list-group-item">Mixing & Mastering Music by Asa</li>
-                <li class="list-group-item">3D Modeling through Unity & Blender by Yoru</li>
-                <li class="list-group-item">& Voice Over by Bufu</li>
+                <li class="list-group-item">Art</li>
+                <li class="list-group-item">Live 2D Animation</li>
+                <li class="list-group-item">Mixing & Mastering Music</li>
+                <li class="list-group-item">3D Modeling through Unity & Blender</li>
+                <li class="list-group-item">& Voice Over!</li>
             </ul>
             <h3>
                 <p class="text-center card-text">
-                    <a class="nav-link" href="portfolio">See their portfolio here</a>
-                    or if you know what you like...
-                    <a class="nav-link" href="commission">Apply for a commission today! </a>
+                    <a class="nav-link" href="search">Search for a commission here!</a>
                 </p>
             </h3>
         </div>

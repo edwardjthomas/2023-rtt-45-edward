@@ -47,21 +47,8 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/home">Home</a>
                         </li>
-
                         <li class="nav-item">
-                            <a class="nav-link" href="/portfolio">Meet The Team/Portfolio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/waitlist">Waitlists</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/commission">Commission Form & TOS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/create">Create a New Account</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/user/search">Select Your Guild Member</a>
+                            <a class="nav-link" href="/search">Search for a Commission</a>
                         </li>
                         <!-- this brings the question of are you logged in or not and responds with showing either the logout words or the log in words -->
                         <sec:authorize access="isAuthenticated()">
@@ -78,10 +65,13 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="/login/loginPage">Login</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/create">Create a New Account</a>
+                            </li>
                         </sec:authorize>
                         <sec:authorize access="hasAnyAuthority('ADMIN')">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="">Admin Exclusive Link</a>
+                                <a class="nav-link active" aria-current="page" href="">This is an Admin</a>
                             </li>
                         </sec:authorize>
 

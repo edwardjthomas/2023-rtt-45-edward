@@ -33,26 +33,4 @@ public class UserController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @RequestMapping(value = "/search", method = RequestMethod.GET)
-    public ModelAndView serviceSearch(@RequestParam(required = false) String artistName) {
-        log.debug("In the search controller method with artistName = " + artistName);
-        ModelAndView response = new ModelAndView("user/search");
-
-        List<Services> services = new ArrayList<>();
-
-        if (!StringUtils.isEmpty(artistName)) {
-            // if so run the query that works with both values
-            log.debug("artistName has a value");
-            services = servicesDAO.findByArtistNameContainingIgnoreCase(artistName);
-        }
-
-        response.addObject("servicesList", services);
-
-        // anything you add on to the search bar will be stored on the search.jsp page
-        response.addObject("artistNameParameter", artistName);
-
-
-
-        return response;
-    }
 }

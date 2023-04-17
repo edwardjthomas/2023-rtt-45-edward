@@ -48,10 +48,10 @@ public class SlashController {
         return response;
     }
 
-    @RequestMapping(value = "/commission", method = RequestMethod.GET)
-    public ModelAndView commission() {
-        log.debug("In the commission controller method.");
-        ModelAndView response = new ModelAndView("commission");
+    @RequestMapping(value = "/tos", method = RequestMethod.GET)
+    public ModelAndView tos() {
+        log.debug("In the tos controller method.");
+        ModelAndView response = new ModelAndView("tos");
         return response;
     }
 
@@ -135,11 +135,14 @@ public class SlashController {
         // to make sure this reflects the changes made on the page
         response.addObject("form", form);
 
-        // now we add a bool to the model so we can add a success message on the page in conjunction with create.jsp (4/11)
+        // now we add a bool to the model so we can add a success message on the page in
+        // conjunction with create.jsp (4/11)
         response.addObject("success", true);
 
-        // set the employee id on the form bean so it triggers the page to be an edit (4/11)
-        // this is just to be nice to put the page into edit mode because if the id is present in the form its considered to be an edit
+        // set the employee id on the form bean so it triggers the page to be an edit
+        // (4/11)
+        // this is just to be nice to put the page into edit mode because if the id is
+        // present in the form its considered to be an edit
         form.setId(user.getId());
 
         return response;
@@ -164,6 +167,27 @@ public class SlashController {
         response.addObject("services", services);
 
         log.debug(services + "");
+        return response;
+    }
+
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public ModelAndView serviceSearch(@RequestParam(required = false) String type) {
+        log.debug("In the search controller method with type = " + type);
+        ModelAndView response = new ModelAndView("search");
+
+        List<Services> services = new ArrayList<>();
+
+        if (!StringUtils.isEmpty(type)) {
+            // if so run the query that works with both values
+            log.debug("type has a value");
+            services = servicesDAO.findByTypeContainingIgnoreCase(type);
+        }
+
+        response.addObject("servicesList", services);
+
+        // anything you add on to the search bar will be stored on the search.jsp page
+        response.addObject("typeParameter", type);
+
         return response;
     }
 

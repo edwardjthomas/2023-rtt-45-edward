@@ -3,6 +3,8 @@
 
 <div class="footer">
     <p>Bufu Guild &copy; 2023</p>
+    <a href="/tos">Terms of Service</a>
+
 </div>
 </body>
 

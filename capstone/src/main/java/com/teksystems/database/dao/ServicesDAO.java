@@ -11,7 +11,7 @@ public interface ServicesDAO extends JpaRepository<Services, Long> {
     @Query("FROM Services s")
     List<Services> getAllServices();
 
-    List<Services> findByArtistNameContainingIgnoreCase(String artistName);
+    List<Services> findByTypeContainingIgnoreCase(String type);
 
     Services findById(Integer id);
 
