@@ -11,7 +11,7 @@ import java.util.Date;
 @Setter
 @Entity
 @ToString
-@Table(name = "order")
+@Table(name = "orders")
 public class Order {
 
     @Id

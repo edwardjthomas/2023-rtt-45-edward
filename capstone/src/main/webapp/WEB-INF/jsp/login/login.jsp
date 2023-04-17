@@ -2,6 +2,8 @@
 
     <jsp:include page="../include/header.jsp" />
 
+    <div style="padding: 1%;"></div>
+
     <form method="POST" action="/login/loginpost">
 
         <div class="form-floating mb-3">
