@@ -49,7 +49,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/portfolio">Meet The Team</a>
+                            <a class="nav-link" href="/portfolio">Meet The Team/Portfolio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/waitlist">Waitlists</a>

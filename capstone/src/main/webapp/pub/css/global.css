@@ -10,7 +10,7 @@
 
         /* css id selector */
         #headergradient {
-            background-image: linear-gradient(to bottom, #87cefa, #ff000000);
+            background-image: linear-gradient(to bottom, #5ac0ff, #ffffff);
         }
 
 
@@ -32,7 +32,7 @@
             text-align-last: center;
             padding-top: 0.5%;
             width: 100%;
-            background-image: linear-gradient(to top, #87cefa, #ff000000);
+            background-image: linear-gradient(to top, #5ac0ff, #ffffff);
         }
 
         /* Style the button used to pause/play the video */
