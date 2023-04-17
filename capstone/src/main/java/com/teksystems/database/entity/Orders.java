@@ -12,7 +12,7 @@ import java.util.Date;
 @Entity
 @ToString
 @Table(name = "orders")
-public class Order {
+public class Orders {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,5 +34,8 @@ public class Order {
 
     @Column(name = "status")
     private String status;
+
+    @Column(name = "commission_status")
+    private String commissionStatus;
 
 }
