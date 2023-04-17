@@ -2,6 +2,8 @@
 
     <jsp:include page="include/header.jsp" />
 
+    <div style="padding: 1%;"></div>
+
     <form method="POST" action="/create">
         <c:if test="${success}">
             <div class="alert alert-success" role="alert">
