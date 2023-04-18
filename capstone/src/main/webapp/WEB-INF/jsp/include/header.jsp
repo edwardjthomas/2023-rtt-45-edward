@@ -53,6 +53,9 @@
                         <!-- this brings the question of are you logged in or not and responds with showing either the logout words or the log in words -->
                         <sec:authorize access="isAuthenticated()">
                             <li class="nav-item">
+                                <a class="nav-link" href="/order/viewcart">Cart</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="/login/logout">Logout</a>
                             </li>
                             <li class="nav-item">

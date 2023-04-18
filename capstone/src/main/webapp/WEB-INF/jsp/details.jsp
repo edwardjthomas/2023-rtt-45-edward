@@ -14,12 +14,12 @@
             <h4 class="pb-2">${services.artistName}'s Details</h4>
             <table class="table table-striped border">
                 <tr>
-                    <td>Id</td>
-                    <td>${services.id}</td>
+                    <td>(<a href="/search?type=${services.type}">Return to Search</a>)</td>
+                    <td><button type="button" id="cart_btn" class="btn btn-info" onclick="add_to_cart()">Add to Cart</button></td>
                 </tr>
                 <tr>
                     <td>Artist</td>
-                    <td>${services.artistName} <a href="/search?type=${services.type}">(Return to Search)</a></td>
+                    <td>${services.artistName}</td>
                 </tr>
                 <tr>
                     <td>Type of Commissions</td>

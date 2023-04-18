@@ -1,3 +1,7 @@
+function add_to_cart() {
+    location.href = '../order/viewcart';
+}
+
 var tag = document.createElement('script');
 
 // 2. This code loads the IFrame Player API code asynchronously.

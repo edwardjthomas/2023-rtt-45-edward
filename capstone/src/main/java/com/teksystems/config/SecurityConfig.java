@@ -28,7 +28,7 @@ public class SecurityConfig {
                 // directory/** means ANY directory underneath is fair game
                 // you can put any number of URLS that you want to secure here with a comma
                 // sepearting them,
-                .authorizeHttpRequests().requestMatchers("/user/**").authenticated()
+                .authorizeHttpRequests().requestMatchers("/user/**", "/order/**").authenticated()
                 // everything else in the application is going to permitted
                 .anyRequest().permitAll()
                 .and()
