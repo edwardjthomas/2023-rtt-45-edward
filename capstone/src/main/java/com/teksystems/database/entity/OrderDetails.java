@@ -23,4 +23,9 @@ public class OrderDetails {
     @Column(name = "services_id", insertable = false, updatable = false)
     private Integer servicesId;
 
+    @ToString.Exclude
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "order_id", nullable = false)
+    private Orders orders;
+
 }
