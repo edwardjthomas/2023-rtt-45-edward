@@ -105,6 +105,28 @@ public class OrderController {
         return response;
     }
 
-    
+    @RequestMapping(value = {"/submitOrder"}, method = RequestMethod.GET)
+    public ModelAndView submitOrder() {
+        log.debug("In the submitOrder controller method.");
+        ModelAndView response = new ModelAndView();
+
+        User user = authenticatedUserService.loadCurrentUser();
+
+        Orders order = ordersDAO.findByStatusEqualsCartAndUserId(user.getId());
+
+        order.setStatus("Complete");
+        ordersDAO.save(order);
+
+        response.setViewName("redirect:/order/ordercomplete");
+        return response;
+
+    }
+
+    @RequestMapping(value = {"/ordercomplete"}, method = RequestMethod.GET)
+    public ModelAndView ordercomplete() {
+        log.debug("In the ordercomplete controller method.");
+        ModelAndView response = new ModelAndView("order/ordercomplete");
+        return response;
+    }
 
 }

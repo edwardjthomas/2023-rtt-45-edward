@@ -33,7 +33,7 @@
 
                 </tbody>
                </table>
-               <a href="" class="btn btn-primary">Checkout</a>
+               <a href="/order/submitOrder" class="btn btn-primary">Checkout</a>
 
            </div>
        </section>
