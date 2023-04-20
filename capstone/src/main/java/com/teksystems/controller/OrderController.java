@@ -21,6 +21,7 @@ import com.teksystems.database.entity.Orders;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 
 @Slf4j // Slf4j allows for the log.info() to work
@@ -97,15 +98,13 @@ public class OrderController {
 
         User user = authenticatedUserService.loadCurrentUser();
 
-        List<Orders> orders = ordersDAO.findListByStatusEqualsCartAndUserId(user.getId());
+        List<Map<String,Object>> orderDetails = ordersDAO.findCartProductsByUserId(user.getId());
 
-//        List<OrderDetails> orderDetails = orderDetailsDAO.findJoinedOrderAndOrderDetailByUserId(user.getId());
-
-        response.addObject("orderItem", orders);
-
-//        response.addObject("orderDetailsList", orderDetails);
-
+        response.addObject("orderDetailsList", orderDetails);
 
         return response;
     }
+
+    
+
 }

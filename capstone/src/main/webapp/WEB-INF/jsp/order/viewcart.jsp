@@ -21,18 +21,20 @@
                 </thead>
                 <tbody>
 
-                    <c:forEach items="${orderItem}" var="ord">
+                    <c:forEach items="${orderDetailsList}" var="ord">
 
                         <tr>
-                            <td scope="row">${ord.id}</td>
-                            <td scope="row">${ord.userId}</td>
-                            <td scope="row">$${ord.startDate}</td>
-                            <td scope="row">${ord.status}</td>
+                            <td scope="row">${ord.artist_name}</td>
+                            <td scope="row">${ord.type}</td>
+                            <td scope="row">$${ord.price}</td>
+                            <td scope="row">${ord.quantity}</td>
                         </tr>
                     </c:forEach>
 
                 </tbody>
                </table>
+               <a href="" class="btn btn-primary">Checkout</a>
+
            </div>
        </section>
 

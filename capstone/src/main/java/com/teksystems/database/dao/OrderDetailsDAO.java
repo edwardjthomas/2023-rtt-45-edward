@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
+import java.util.Map;
 
 public interface OrderDetailsDAO extends JpaRepository<OrderDetails, Long> {
 
@@ -20,11 +21,5 @@ public interface OrderDetailsDAO extends JpaRepository<OrderDetails, Long> {
     @Query(value = "SELECT * FROM orderdetails od WHERE od.order_id = :orderId AND od.services_id = :servicesId ;", nativeQuery = true)
     OrderDetails findByOrderIdAndServicesId(Integer orderId, Integer servicesId);
 
-    @Query(value = "SELECT *\n" +
-            "FROM orderdetails\n" +
-            "JOIN orders ON orderdetails.order_id = orders.id\n" +
-            "JOIN services ON orderdetails.services_id = services.id\n" +
-            "WHERE orders.status = 'Cart'\n" +
-            "AND user_id = :userId ;", nativeQuery = true)
-    List<OrderDetails> findJoinedOrderAndOrderDetailByUserId(Integer userId);
+
 }
