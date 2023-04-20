@@ -36,39 +36,19 @@
 
             <h4 class="pb-2">${servicesList.size()} Guild Member(s) Selected!</h4>
 
-
-            <table class="table table-striped border">
-                <!-- thead specifices this is the header row for the table -->
-                <thead>
-                    <tr>
-                        <!-- we were asked to add the id to this page. it takes two lines of code to cover it -->
-                        <!-- in the second implementation, we connect it to a link by using the <a></a> reference with href to send it to the detail page with the id attached -->
-                        <th scope="col">Id</th>
-                        <th scope="col">Artist</th>
-                        <th scope="col">Type of Commissions</th>
-                        <th scope="col">Starting Price of Commission</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Image Example</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- this is the second step for for loop in jsp -->
-                    <!-- for each items in this list, call this iteration as emp -->
                     <c:forEach items="${servicesList}" var="serv">
 
-                        <tr>
-                            <!-- this is the third step. make sure to check back to the object's respective entity folder to clarify files -->
-                            <!-- remember: you HAVE to include it on each page this is being used -->
-                            <th scope="row"><a href="/details/${serv.id}">${serv.id}</a></th>
-                            <td scope="row">${serv.artistName}</td>
-                            <td scope="row">${serv.type}</td>
-                            <td scope="row">$${serv.price}</td>
-                            <td scope="row">${serv.description}</td>
-                            <td scope="row"><img src="${serv.image_Url}" /></td>
-                        </tr>
+						<div class="card" style="width: 18rem;">
+                          <img src="${serv.image_Url}" class="card-img-top" alt="${serv.image_Url}">
+                          <div class="card-body">
+                            <h5 class="card-title">${serv.artistName}</h5>
+                            <p class="card-text">${serv.description}</p>
+                            $${serv.price}
+                            <a href="/details/${serv.id}" class="btn btn-primary">More details</a>
+                          </div>
+                        </div>
+
                     </c:forEach>
-                </tbody>
-            </table>
         </div>
     </section>
 

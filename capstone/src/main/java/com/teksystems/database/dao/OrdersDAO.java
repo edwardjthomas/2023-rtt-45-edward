@@ -28,4 +28,7 @@ public interface OrdersDAO extends JpaRepository<Orders, Long> {
     @Query(value = "select s.*, od.quantity from services s, orderdetails od, orders o where s.id = od.services_id and od.order_id = o.id and o.status ='Cart' and o.user_id = :userId ;"
             , nativeQuery = true)
     List<Map<String,Object>> findCartProductsByUserId(Integer userId);
+
+    @Query(value = "select s.*, od.quantity from services s, orderdetails od, orders o where s.id = od.services_id and od.order_id = o.id and o.status ='Complete' and o.user_id = :userId ;", nativeQuery = true)
+    List<Map<String,Object>> findPastOrdersByUserId(Integer userId);
 }

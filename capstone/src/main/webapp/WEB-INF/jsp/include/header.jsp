@@ -59,7 +59,7 @@
                                 <a class="nav-link" href="/login/logout">Logout</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">
+                                <a class="nav-link" href="/order/pastorders">
                                     <sec:authentication property="principal.username" />
                                 </a>
                             </li>
@@ -77,7 +77,6 @@
                                 <a class="nav-link active" aria-current="page" href="">This is an Admin</a>
                             </li>
                         </sec:authorize>
-
                     </ul>
                 </div>
             </div>

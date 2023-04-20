@@ -11,9 +11,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import com.teksystems.database.entity.User;
 import com.teksystems.database.entity.Orders;
@@ -126,6 +124,22 @@ public class OrderController {
     public ModelAndView ordercomplete() {
         log.debug("In the ordercomplete controller method.");
         ModelAndView response = new ModelAndView("order/ordercomplete");
+        return response;
+    }
+
+    @GetMapping("/pastorders")
+    public ModelAndView pastorders() {
+        ModelAndView response = new ModelAndView("order/pastorders");
+        User user = authenticatedUserService.loadCurrentUser();
+
+
+        log.debug("In pastorders controller method");
+        List<Map<String,Object>> order = ordersDAO.findPastOrdersByUserId(user.getId());
+
+        // this allows for the employee details to appear on the details page
+        response.addObject("order", order);
+
+        log.debug(order + "");
         return response;
     }
 
