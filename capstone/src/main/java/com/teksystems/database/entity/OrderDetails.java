@@ -23,9 +23,17 @@ public class OrderDetails {
     @Column(name = "services_id", insertable = false, updatable = false)
     private Integer servicesId;
 
+    @Column(name = "quantity")
+    private Integer quantity;
+
     @ToString.Exclude
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "order_id", nullable = false)
     private Orders orders;
+
+    @ToString.Exclude
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "services_id", nullable = false)
+    private Services services;
 
 }

@@ -14,8 +14,9 @@ public interface OrdersDAO extends JpaRepository<Orders, Long> {
 
     Orders findByUserId(Integer userId);
 
-    //%:user_id% creates unsatisfied dependency error, why?
-    @Query(value = "SELECT * FROM orders o WHERE o.status = 'Cart' AND o.user_id LIKE user_id ;", nativeQuery = true)
-    List<Orders> findByStatusAndUserId(String status, Integer userId);
+    @Query("FROM Orders o WHERE o.status = 'Cart' AND o.user.id = :userId ")
+    Orders findByStatusEqualsCartAndUserId(Integer userId);
 
+    @Query("FROM Orders o WHERE o.status = 'Cart' AND o.user.id = :userId ")
+    List<Orders> findListByStatusEqualsCartAndUserId(Integer userId);
 }

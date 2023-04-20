@@ -5,7 +5,6 @@ import org.springframework.data.jpa.repository.Query;
 import com.teksystems.database.entity.User;
 
 import java.util.List;
-import java.util.Map;
 
 public interface UserDAO extends JpaRepository<User, Long> {
 
@@ -15,4 +14,10 @@ public interface UserDAO extends JpaRepository<User, Long> {
     User findById(Integer id);
 
     User findByUsername(String username);
+
+    boolean existsByEmail(String email);
+
+    boolean existsByUsername(String username);
+
+    User findByEmail(String email);
 }

@@ -7,7 +7,9 @@ import com.teksystems.database.entity.Services;
 import com.teksystems.database.entity.User;
 import com.teksystems.database.entity.UserRole;
 import com.teksystems.formbeans.UserFormBean;
+import com.teksystems.security.AuthenticatedUserService;
 import io.micrometer.common.util.StringUtils;
+import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,6 +35,9 @@ public class SlashController {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private AuthenticatedUserService authenticatedUserService;
 
     @RequestMapping(value = { "/home", "/" }, method = RequestMethod.GET)
     public ModelAndView home() {
@@ -96,7 +101,7 @@ public class SlashController {
 
     // post mapping for create
     @PostMapping("/create")
-    public ModelAndView setup(UserFormBean form) {
+    public ModelAndView setup(UserFormBean form, HttpSession session) {
 
         ModelAndView response = new ModelAndView("create");
         log.debug("In the create controller method after making new user.");
@@ -129,6 +134,8 @@ public class SlashController {
         // THEN the userRole is created
         // they both finish before the controller method finishes
         userRoleDAO.save(userRole);
+
+        authenticatedUserService.changeLoggedInUsername(session, form.getUsername(), form.getPassword());
 
         log.debug(form.toString());
 

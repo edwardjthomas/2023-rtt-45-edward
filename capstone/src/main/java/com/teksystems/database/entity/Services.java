@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -31,5 +34,9 @@ public class Services {
 
     @Column(name = "image_url")
     private String image_Url;
+
+    @ToString.Exclude
+    @OneToMany(mappedBy = "services", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<OrderDetails> orderDetails = new ArrayList<OrderDetails>();
 
 }

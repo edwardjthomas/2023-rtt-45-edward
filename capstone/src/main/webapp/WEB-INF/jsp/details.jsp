@@ -15,7 +15,7 @@
             <table class="table table-striped border">
                 <tr>
                     <td>(<a href="/search?type=${services.type}">Return to Search</a>)</td>
-                    <td><button type="button" id="cart_btn" class="btn btn-info" onclick="add_to_cart()">Add to Cart</button></td>
+                    <td>(<a href="/order/addtocart?serviceId=${services.id}">Add To Cart</a>)</td>
                 </tr>
                 <tr>
                     <td>Artist</td>

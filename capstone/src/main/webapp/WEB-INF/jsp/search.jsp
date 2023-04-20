@@ -7,7 +7,7 @@
 
     <section class="pt-5 pb-5 light-color-bg">
         <div class="container text-center">
-            <h1> Select Your Guild Member </h1>
+            <h1> What Type of Commission Do You Desire? </h1>
         </div>
     </section>
 

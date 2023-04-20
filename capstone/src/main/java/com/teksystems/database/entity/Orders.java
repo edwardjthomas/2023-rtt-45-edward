@@ -37,9 +37,6 @@ public class Orders {
     @Column(name = "status")
     private String status;
 
-    @Column(name = "commission_status")
-    private String commissionStatus;
-
     @ToString.Exclude
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_id", nullable = false)

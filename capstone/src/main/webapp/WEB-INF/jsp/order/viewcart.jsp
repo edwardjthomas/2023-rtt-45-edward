@@ -4,25 +4,36 @@
 
     <section style="background-color: #ffffff;">
         <div class="container text-center">
-            <h1>Cart</h1>
+            <h1>Your Cart</h1>
         </div>
     </section>
 
-    <section style="background-color: #ffffff;">
-        <!-- have one side show the product and have the other side show the quantity and price. -->
-        <!-- but until then have the cart be empty. -->
-        <div class="container text-center">
-            <div class="justify-content-center">
-                <div class="card">
-                    <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-                    <div class="card-body">
-                        <h5 class="card-title">Cart is empty</h5>
-                        <p class="card-text">Please add items to the cart to make a purchase.</p>
-                        <a href="" class="btn btn-primary">Checkout</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+       <section class="pt-3 pb-3 light-color-bg">
+           <div class="container text-center">
+	               <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Artist</th>
+                        <th scope="col">Type of Commissions</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <c:forEach items="${orderItem}" var="ord">
+
+                        <tr>
+                            <td scope="row">${ord.id}</td>
+                            <td scope="row">${ord.userId}</td>
+                            <td scope="row">$${ord.startDate}</td>
+                            <td scope="row">${ord.status}</td>
+                        </tr>
+                    </c:forEach>
+
+                </tbody>
+               </table>
+           </div>
+       </section>
 
     <jsp:include page="../include/footer.jsp" />
