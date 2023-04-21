@@ -89,6 +89,30 @@ public class OrderController {
         return response;
     }
 
+    @RequestMapping(value = {"/removefromcart"}, method = RequestMethod.GET)
+    // 1) incoming argument to controller is the product_id
+    public ModelAndView removefromcart(@RequestParam(required = true) Integer serviceId) {
+        log.debug("In the removefromcart controller method.");
+        ModelAndView response = new ModelAndView();
+
+        Services service = servicesDAO.findById(serviceId);
+
+        User user = authenticatedUserService.loadCurrentUser();
+
+        // does making a new orders here wipe whatever was previously established?
+        // 3) query for an order where status = "cart" and user_id = "logged in user id"
+        Orders order = ordersDAO.findByStatusEqualsCartAndUserId(user.getId());
+
+        // 5) use the product_id and the order id to create query for the order product
+        OrderDetails orderDetails = orderDetailsDAO.findByOrderIdAndServicesId(order.getId(), service.getId());
+
+        orderDetailsDAO.removeFromCartByOrderIdAndServicesId(order.getId(), service.getId());
+
+        orderDetailsDAO.save(orderDetails);
+        response.setViewName("redirect:/order/viewcart");
+        return response;
+    }
+
     @RequestMapping(value = {"/viewcart"}, method = RequestMethod.GET)
     public ModelAndView viewcart() {
         log.debug("In the viewcart controller method.");

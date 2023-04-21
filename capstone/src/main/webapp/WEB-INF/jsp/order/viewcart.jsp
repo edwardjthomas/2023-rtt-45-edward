@@ -26,7 +26,7 @@
 
                             <div class="card-body">
                                 <h5 class="card-title">$${orderQuantityPrice}</h5>
-                                <p class="card-text"></p>
+                                <p><a href="/order/removefromcart?serviceId=${ord.id}" class="btn btn-primary btn-sm">Remove from Cart</a></p>
                             </div>
                         </div>
 

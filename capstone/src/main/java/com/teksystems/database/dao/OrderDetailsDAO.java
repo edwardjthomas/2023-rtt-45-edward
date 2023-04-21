@@ -2,7 +2,9 @@ package com.teksystems.database.dao;
 
 import com.teksystems.database.entity.OrderDetails;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Map;
@@ -20,6 +22,11 @@ public interface OrderDetailsDAO extends JpaRepository<OrderDetails, Long> {
 
     @Query(value = "SELECT * FROM orderdetails od WHERE od.order_id = :orderId AND od.services_id = :servicesId ;", nativeQuery = true)
     OrderDetails findByOrderIdAndServicesId(Integer orderId, Integer servicesId);
+
+    @Transactional
+    @Modifying
+    @Query(value = "DELETE FROM orderdetails WHERE order_id = :orderId AND services_id = :servicesId ;", nativeQuery = true)
+    void removeFromCartByOrderIdAndServicesId(Integer orderId, Integer servicesId);
 
 
 }
