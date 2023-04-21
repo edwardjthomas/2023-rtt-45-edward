@@ -32,18 +32,19 @@
     </section>
 
     <section class="pt-5 pb-5 light-color-bg">
-        <div class="container text-center">
 
-            <h4 class="pb-2">${servicesList.size()} Guild Member(s) Selected!</h4>
+        <h4 class="pb-2 text-center">${servicesList.size()} Guild Member(s) Selected!</h4>
+
+        <div class="container text-center" id="searchResultsContainer">
+
 
                     <c:forEach items="${servicesList}" var="serv">
 
-						<div class="card" style="width: 18rem;">
+						<div class="card" style="width: 18rem; margin: 20px;">
                           <img src="${serv.image_Url}" class="card-img-top" alt="${serv.image_Url}">
                           <div class="card-body">
-                            <h5 class="card-title">${serv.artistName}</h5>
+                            <h5 class="card-title">${serv.artistName}'s ${serv.type} Commissions</h5>
                             <p class="card-text">${serv.description}</p>
-                            $${serv.price}
                             <a href="/details/${serv.id}" class="btn btn-primary">More details</a>
                           </div>
                         </div>
