@@ -69,3 +69,15 @@
             flex-wrap: wrap;
             justify-content: space-evenly;
         }
+
+        #detailsContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #viewCartContainer {
+            display:flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+        }
