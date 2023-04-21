@@ -13,41 +13,40 @@
             <section class="pt-3 pb-3 light-color-bg">
                 <div class="container text-center" id="viewCartContainer">
 
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Artist</th>
-                                <th scope="col">Type of Commissions</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Quantity</th>
-                            </tr>
-                        </thead>
-                        <tbody>
 
-                            <c:forEach items="${orderDetailsList}" var="ord">
+                    <c:set var="orderTotalPrice" value='${ord.price + orderTotalPrice}'></c:set>
 
-                                <tr>
-                                    <td scope="row">${ord.artist_name}</td>
-                                    <td scope="row">${ord.type}</td>
-                                    <td scope="row">$${ord.price}</td>
-                                    <td scope="row">${ord.quantity}</td>
-                                </tr>
+                    <c:forEach items="${orderDetailsList}" var="ord">
+                        <c:set var="orderQuantityPrice" value='${ord.price * ord.quantity}'></c:set>
+                        <c:set var="subTotalPrice" value='${orderQuantityPrice + subTotalPrice}'></c:set>
 
-                                <div class="card border-primary mb-3" style="max-width: 250px; margin: 5px;">
-                                    <div class="card-header">${ord.artist_name}'s ${ord.type} Commissions x${ord.quantity}</div>
-                                    <div class="card-body text-primary">
-                                        <h5 class="card-title">$${ord.price}</h5>
-                                        <p class="card-text"></p>
-                                    </div>
-                                    <img src="${ord.image_Url}" class="card-img-bottom" alt="${ord.image_Url}">
-                                </div>
-                            </c:forEach>
+                        <div class="card border-primary mb-3" style="max-width: 200px; margin: 5px;">
+                            <div class="card-header"><a href="/details/${ord.id}">${ord.artist_name}'s ${ord.type} Commissions</a> x${ord.quantity}</div>
+                            <img src="${ord.image_Url}" class="card-img-top" alt="${ord.image_Url}">
 
-                        </tbody>
-                    </table>
+                            <div class="card-body">
+                                <h5 class="card-title">$${orderQuantityPrice}</h5>
+                                <p class="card-text"></p>
+                            </div>
+                        </div>
 
+                    </c:forEach>
 
                 </div>
+                <section>
+                    <div class="container text-center" id="subTotalContainer">
+                        <div class="card border-primary mb-3 text-center" style="max-width: 250px; margin: 5px;">
+
+                            <div class="card-header">
+                                <h4>SubTotal:</h4>
+                            </div>
+                            <div class="card-body text-primary">
+                                <h2 class="card-title">$${subTotalPrice}</h2>
+                                <p class="card-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <div class="container text-center justify-content-center">
                     <p><a href="/order/submitOrder" class="btn btn-primary btn-lg">Checkout</a></p>
                     <p><a href="/search" class="btn btn-primary">Add More Commissions</a></p>

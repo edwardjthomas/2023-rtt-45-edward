@@ -81,3 +81,9 @@
             flex-wrap: wrap;
             align-items: flex-end;
         }
+
+        #subTotalContainer {
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
