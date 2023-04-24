@@ -35,6 +35,9 @@ public class Services {
     @Column(name = "image_url")
     private String image_Url;
 
+    @Column(name = "quote")
+    private String quote;
+
     @ToString.Exclude
     @OneToMany(mappedBy = "services", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<OrderDetails> orderDetails = new ArrayList<OrderDetails>();

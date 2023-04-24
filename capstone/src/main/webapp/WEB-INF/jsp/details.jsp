@@ -19,7 +19,8 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title">${services.description}</h5>
+                            <h3 class="card-title">${services.description}</h3>
+                            <h5 class="card-body">${services.quote}</h5>
                             <p><a href="/order/addtocart?serviceId=${services.id}" class="btn btn-primary btn-lg">Add To
                                     Cart</a></p>
                             <p><a href="/search?type=${services.type}" class="btn btn-secondary btn-sm">Return to
