@@ -10,9 +10,12 @@ import com.teksystems.formbeans.UserFormBean;
 import com.teksystems.security.AuthenticatedUserService;
 import io.micrometer.common.util.StringUtils;
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -101,10 +104,26 @@ public class SlashController {
 
     // post mapping for create
     @PostMapping("/create")
-    public ModelAndView setup(UserFormBean form, HttpSession session) {
+    public ModelAndView setup(@Valid UserFormBean form, BindingResult bindingResult, HttpSession session) {
 
         ModelAndView response = new ModelAndView("create");
         log.debug("In the create controller method after making new user.");
+
+        if (org.apache.commons.lang3.StringUtils.equals(form.getPassword(), form.getConfirmPassword()) == false) {
+            bindingResult.rejectValue("confirmPassword", "error.confirmPassword", "Passwords do not match");
+        }
+
+        if (bindingResult.hasErrors()) {
+            for (FieldError error : bindingResult.getFieldErrors()) {
+                log.debug("Validation Error on field: " + error.getField());
+
+                log.debug("Validation Error Message: " + error.getDefaultMessage());
+            }
+
+            response.addObject("bindingResult", bindingResult);
+
+            return response;
+        }
 
         User user = new User();
         user.setUsername(form.getUsername());

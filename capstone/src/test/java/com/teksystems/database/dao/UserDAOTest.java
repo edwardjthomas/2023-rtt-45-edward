@@ -24,4 +24,14 @@ public class UserDAOTest {
         Assertions.assertEquals(user.getId(),1);
         Assertions.assertEquals(user.getUsername(),"JellyFishRFake");
     }
+
+    @Test
+    public void findByUsernameTest() {
+        User user = userDAO.findByUsername("xXtHeEdGeXx");
+
+        Assertions.assertEquals(user.getName(),"Christopher Holmes");
+        Assertions.assertEquals(user.getId(),5);
+        Assertions.assertEquals(user.getEmail(),"dankmemes21@email.com");
+        Assertions.assertEquals(user.getPreferredContact(),"Discord");
+    }
 }
