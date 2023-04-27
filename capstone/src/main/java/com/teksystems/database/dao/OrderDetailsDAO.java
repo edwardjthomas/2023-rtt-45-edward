@@ -22,6 +22,8 @@ public interface OrderDetailsDAO extends JpaRepository<OrderDetails, Long> {
     // get the view cart page working, add 2 products to the cart, then write the
     // query to get the order products
 
+
+
     @Query(value = "SELECT * FROM orderdetails od WHERE od.order_id = :orderId AND od.services_id = :servicesId ;", nativeQuery = true)
     OrderDetails findByOrderIdAndServicesId(Integer orderId, Integer servicesId);
 

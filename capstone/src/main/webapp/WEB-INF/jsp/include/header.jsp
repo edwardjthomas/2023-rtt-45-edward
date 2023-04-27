@@ -32,7 +32,7 @@
         <nav id="headergradient" class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
                 <!-- <img src="https://www.trueachievements.com/imagestore/0006853200/6853232.jpg" alt="logo" /></a> -->
-                <img src="\pub\images\BufuSmallLogo.png" alt="logo" /></a>
+                <img src="/pub/images/BufuSmallLogo.png" alt="logo" /></a>
                 <h4 id="pageTitle">Bufu Guild Commissions</h4>
 
 
