@@ -20,8 +20,6 @@ public class UserDAOTest {
     public void findByIdTest() {
         User user = userDAO.findById(1);
 
-
-
         Assertions.assertEquals(user.getName(),"Kyle Timm");
         Assertions.assertEquals(user.getId(),1);
         Assertions.assertEquals(user.getUsername(),"JellyFishRFake");
