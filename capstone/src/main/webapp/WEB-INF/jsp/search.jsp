@@ -38,18 +38,18 @@
         <div class="container text-center" id="searchResultsContainer">
 
 
-                    <c:forEach items="${servicesList}" var="serv">
+            <c:forEach items="${servicesList}" var="serv">
 
-						<div class="card" style="width: 18rem; margin: 20px;">
-                          <img src="${serv.image_Url}" class="card-img-top" alt="${serv.image_Url}">
-                          <div class="card-body">
-                            <h5 class="card-title">${serv.artistName}'s ${serv.type} Commissions</h5>
-                            <p class="card-text">Starts at $${serv.price}</p>
-                            <a href="/details/${serv.id}" class="btn btn-primary">More details</a>
-                          </div>
-                        </div>
+                <div class="card" style="width: 18rem; margin: 20px;">
+                    <img src="${serv.image_Url}" class="card-img-top" alt="${serv.image_Url}">
+                    <div class="card-body">
+                        <h5 class="card-title">${serv.artistName}'s ${serv.type} Commissions</h5>
+                        <p class="card-text">Starts at $${serv.price}</p>
+                        <a href="/details/${serv.id}" class="btn btn-primary">More details</a>
+                    </div>
+                </div>
 
-                    </c:forEach>
+            </c:forEach>
         </div>
     </section>
 

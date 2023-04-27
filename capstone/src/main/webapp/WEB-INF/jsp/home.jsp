@@ -29,8 +29,7 @@
 
     <!-- a card with a list group inside -->
     <div class="card mb-3 mx-auto" style="width: 30%; position: relative;">
-        <img src="\pub\images\tyk0XbH.png"
-            class="card-img-top" alt="card-img-top">
+        <img src="\pub\images\tyk0XbH.png" class="card-img-top" alt="card-img-top">
         <div class="card-body">
             <h3 class="text-center card-title">Bufu Guild has Specialists for:</h3>
             <ul class="text-center list-group">

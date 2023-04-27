@@ -79,9 +79,9 @@ public class Customer {
     private List<Payment> payments = new ArrayList<Payment>();
 
     // to orders
-//    @ToString.Exclude
-//    @LazyCollection(LazyCollectionOption.FALSE)
-//    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-//    private List<Order> orders = new ArrayList<Order>();
+    // @ToString.Exclude
+    // @LazyCollection(LazyCollectionOption.FALSE)
+    // @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    // private List<Order> orders = new ArrayList<Order>();
 
 }

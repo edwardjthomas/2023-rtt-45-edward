@@ -10,7 +10,8 @@
                     <div class="card-body">
                         <h3 class="card-title">Order Complete</h3>
                         <h5 class="card-title">Thank you for your purchase!</h5>
-                        <p class="card-text"><a class="btn btn-primary btn-lg" href="/search">Search for more Commissions</a></p>
+                        <p class="card-text"><a class="btn btn-primary btn-lg" href="/search">Search for more
+                                Commissions</a></p>
                         <p class="card-text"><a class="btn btn-primary btn-md" href="/home">Back to Home</a></p>
                     </div>
                 </div>

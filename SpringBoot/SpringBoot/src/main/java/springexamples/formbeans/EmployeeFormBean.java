@@ -27,14 +27,15 @@ public class EmployeeFormBean {
     // it's to be a hidden input field
     private Integer id;
 
-
     // @NotNull is valid if the value is not null or if the value is "" (4/11)
-    // @NotEmpty is valid if the value is not null and if the value is not "" and if the value length > 0
+    // @NotEmpty is valid if the value is not null and if the value is not "" and if
+    // the value length > 0
     // @Length
     // @Pattern
     // if you want to search for anything look into JSR 303
     // it helps to at least input a @Length
-    // best way to be safe about securing database things would be through the formbean (here)
+    // best way to be safe about securing database things would be through the
+    // formbean (here)
     @NotEmpty(message = "Email address is required.")
     @Length(max = 100, message = "Email cannot be longer than 100 characters")
     @Pattern(regexp = ".+@.+\\.[a-z]+", message = "Invalid email format")

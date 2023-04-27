@@ -15,10 +15,12 @@ public interface OrderDetailsDAO extends JpaRepository<OrderDetails, Long> {
 
     // need to do select * from orderdetails where (status...)
     // join the orderdetails to the order table
-    // and then you want where the order status = "Cart" and the user_id is the logged in user
+    // and then you want where the order status = "Cart" and the user_id is the
+    // logged in user
     // can be done as either native or jpa query (native preferred)
 
-    // get the view cart page working, add 2 products to the cart, then write the query to get the order products
+    // get the view cart page working, add 2 products to the cart, then write the
+    // query to get the order products
 
     @Query(value = "SELECT * FROM orderdetails od WHERE od.order_id = :orderId AND od.services_id = :servicesId ;", nativeQuery = true)
     OrderDetails findByOrderIdAndServicesId(Integer orderId, Integer servicesId);
@@ -27,6 +29,5 @@ public interface OrderDetailsDAO extends JpaRepository<OrderDetails, Long> {
     @Modifying
     @Query(value = "DELETE FROM orderdetails WHERE order_id = :orderId AND services_id = :servicesId ;", nativeQuery = true)
     void removeFromCartByOrderIdAndServicesId(Integer orderId, Integer servicesId);
-
 
 }

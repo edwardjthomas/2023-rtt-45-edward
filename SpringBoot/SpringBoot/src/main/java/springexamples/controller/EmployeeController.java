@@ -18,7 +18,6 @@ import springexamples.database.entity.Employee;
 import springexamples.database.entity.Office;
 import springexamples.formbeans.EmployeeFormBean;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -180,7 +179,12 @@ public class EmployeeController {
     // getting form submission button to work more efficiently by creating a
     // createSubmit page on the employee/create page
     @PostMapping("/createSubmit")
-    public ModelAndView createSubmit(@Valid EmployeeFormBean form, BindingResult bindingResult) {  // added @Valid and bindingResult (4/11) tells spring to run the validations on that form bean
+    public ModelAndView createSubmit(@Valid EmployeeFormBean form, BindingResult bindingResult) { // added @Valid and
+                                                                                                  // bindingResult
+                                                                                                  // (4/11) tells spring
+                                                                                                  // to run the
+                                                                                                  // validations on that
+                                                                                                  // form bean
         ModelAndView response = new ModelAndView("employee/create");
 
         // if you haven't done it already, copy these two lines of code to retain the
@@ -190,20 +194,21 @@ public class EmployeeController {
         response.addObject("offices", offices);
 
         if (bindingResult.hasErrors()) {
-            // using the autocomplete to learn more about functions like .getAllErrors() and List<ObjectError>
-            //            for (ObjectError error : bindingResult.getAllErrors()) {
-            //                log.debug(error.toString());
-                for (FieldError error : bindingResult.getFieldErrors()) {
-                    log.debug("Validation Error on field : " + error.getField() + " with message : " + error.getDefaultMessage());
-                }
+            // using the autocomplete to learn more about functions like .getAllErrors() and
+            // List<ObjectError>
+            // for (ObjectError error : bindingResult.getAllErrors()) {
+            // log.debug(error.toString());
+            for (FieldError error : bindingResult.getFieldErrors()) {
+                log.debug("Validation Error on field : " + error.getField() + " with message : "
+                        + error.getDefaultMessage());
+            }
 
+            // a means to repopulate all the fields filled by the user (4/11)
+            response.addObject("form", form);
+            // also ties it to the bindingResult
+            response.addObject("bindingResult", bindingResult);
 
-                // a means to repopulate all the fields filled by the user (4/11)
-                response.addObject("form", form);
-                // also ties it to the bindingResult
-                response.addObject("bindingResult", bindingResult);
-
-                return response;
+            return response;
         }
 
         // if we get this far it means there were no error in the incoming data
@@ -239,11 +244,14 @@ public class EmployeeController {
         // to make sure this reflects the changes made on the page
         response.addObject("form", form);
 
-        // now we add a bool to the model so we can add a success message on the page in conjunction with create.jsp (4/11)
+        // now we add a bool to the model so we can add a success message on the page in
+        // conjunction with create.jsp (4/11)
         response.addObject("success", true);
 
-        // set the employee id on the form bean so it triggers the page to be an edit (4/11)
-        // this is just to be nice to put the page into edit mode because if the id is present in the form its considered to be an edit
+        // set the employee id on the form bean so it triggers the page to be an edit
+        // (4/11)
+        // this is just to be nice to put the page into edit mode because if the id is
+        // present in the form its considered to be an edit
         form.setId(emp.getId());
 
         // simply put it redirects us back to employee edit after we do the employee

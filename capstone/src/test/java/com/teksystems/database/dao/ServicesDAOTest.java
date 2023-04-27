@@ -16,8 +16,8 @@ public class ServicesDAOTest {
     public void findByTypeContainingIgnoreCaseTest() {
         servicesDAO.findByTypeContainingIgnoreCase("Art");
         Services services = servicesDAO.findById(1);
-        Assertions.assertEquals(services.getArtistName(),"Ame");
-        Assertions.assertEquals(services.getType(),"Art");
+        Assertions.assertEquals(services.getArtistName(), "Ame");
+        Assertions.assertEquals(services.getType(), "Art");
 
     }
 

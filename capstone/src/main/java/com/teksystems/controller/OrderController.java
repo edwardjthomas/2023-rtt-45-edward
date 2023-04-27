@@ -22,7 +22,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-
 @Slf4j // Slf4j allows for the log.info() to work
 @Controller
 @RequestMapping("/order")
@@ -50,7 +49,7 @@ public class OrderController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @RequestMapping(value = {"/addtocart"}, method = RequestMethod.GET)
+    @RequestMapping(value = { "/addtocart" }, method = RequestMethod.GET)
     // 1) incoming argument to controller is the product_id
     public ModelAndView addtocart(@RequestParam(required = true) Integer serviceId) {
         log.debug("In the addtocart controller method.");
@@ -77,7 +76,8 @@ public class OrderController {
         // 5) use the product_id and the order id to create query for the order product
         OrderDetails orderDetails = orderDetailsDAO.findByOrderIdAndServicesId(order.getId(), service.getId());
 
-        // 6) if it exists then increment the quantity by 1 otherwise create it with quantity = 1
+        // 6) if it exists then increment the quantity by 1 otherwise create it with
+        // quantity = 1
         if (orderDetails == null) {
             orderDetails = new OrderDetails();
             orderDetails.setQuantity(1);
@@ -91,7 +91,7 @@ public class OrderController {
         return response;
     }
 
-    @RequestMapping(value = {"/removefromcart"}, method = RequestMethod.GET)
+    @RequestMapping(value = { "/removefromcart" }, method = RequestMethod.GET)
     // 1) incoming argument to controller is the product_id
     public ModelAndView removefromcart(@RequestParam(required = true) Integer serviceId) {
         log.debug("In the removefromcart controller method.");
@@ -115,21 +115,21 @@ public class OrderController {
         return response;
     }
 
-    @RequestMapping(value = {"/viewcart"}, method = RequestMethod.GET)
+    @RequestMapping(value = { "/viewcart" }, method = RequestMethod.GET)
     public ModelAndView viewcart() {
         log.debug("In the viewcart controller method.");
         ModelAndView response = new ModelAndView("order/viewcart");
 
         User user = authenticatedUserService.loadCurrentUser();
 
-        List<Map<String,Object>> orderDetails = ordersDAO.findCartProductsByUserId(user.getId());
+        List<Map<String, Object>> orderDetails = ordersDAO.findCartProductsByUserId(user.getId());
 
         response.addObject("orderDetailsList", orderDetails);
 
         return response;
     }
 
-    @RequestMapping(value = {"/submitOrder"}, method = RequestMethod.GET)
+    @RequestMapping(value = { "/submitOrder" }, method = RequestMethod.GET)
     public ModelAndView submitOrder() {
         log.debug("In the submitOrder controller method.");
         ModelAndView response = new ModelAndView();
@@ -146,7 +146,7 @@ public class OrderController {
 
     }
 
-    @RequestMapping(value = {"/ordercomplete"}, method = RequestMethod.GET)
+    @RequestMapping(value = { "/ordercomplete" }, method = RequestMethod.GET)
     public ModelAndView ordercomplete() {
         log.debug("In the ordercomplete controller method.");
         ModelAndView response = new ModelAndView("order/ordercomplete");
@@ -158,9 +158,8 @@ public class OrderController {
         ModelAndView response = new ModelAndView("order/pastorders");
         User user = authenticatedUserService.loadCurrentUser();
 
-
         log.debug("In pastorders controller method");
-        List<Map<String,Object>> order = ordersDAO.findPastOrdersByUserId(user.getId());
+        List<Map<String, Object>> order = ordersDAO.findPastOrdersByUserId(user.getId());
 
         // this allows for the employee details to appear on the details page
         response.addObject("order", order);

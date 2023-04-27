@@ -11,7 +11,6 @@ import java.util.Date;
 @ToString
 public class OrdersFormBean {
 
-
     private Integer id;
 
     private Integer userId;

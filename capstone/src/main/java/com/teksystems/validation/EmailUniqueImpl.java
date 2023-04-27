@@ -19,7 +19,8 @@ public class EmailUniqueImpl implements ConstraintValidator<EmailUnique, String>
     public static final Logger LOG = LoggerFactory.getLogger(EmailUniqueImpl.class);
 
     // not the same as eric's push
-    // have to change userDAO and user to employeedao and employee to work for our own example
+    // have to change userDAO and user to employeedao and employee to work for our
+    // own example
     @Autowired
     private UserDAO userDAO;
 
@@ -44,7 +45,8 @@ public class EmailUniqueImpl implements ConstraintValidator<EmailUnique, String>
     }
 
     public boolean existsExample2(String value) {
-        // in this method we have used a spring data jpa function to see if the email exists
+        // in this method we have used a spring data jpa function to see if the email
+        // exists
         boolean exists = userDAO.existsByEmail(value);
         return !exists;
     }

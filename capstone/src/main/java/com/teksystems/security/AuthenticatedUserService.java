@@ -23,8 +23,10 @@ public class AuthenticatedUserService {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    // this method will authenticate a user as if they had logged in through the login page.
-    // there was a last second massive change here but it is operational(?) now (4/11)
+    // this method will authenticate a user as if they had logged in through the
+    // login page.
+    // there was a last second massive change here but it is operational(?) now
+    // (4/11)
     public void changeLoggedInUsername(HttpSession session, String username, String unencryptedPassword) {
         // reset security principal to be the new user information
         Authentication request = new UsernamePasswordAuthenticationToken(username, unencryptedPassword);
@@ -43,7 +45,8 @@ public class AuthenticatedUserService {
     public String getCurrentUsername() {
         SecurityContext context = SecurityContextHolder.getContext();
         if (context != null && context.getAuthentication() != null) {
-            final org.springframework.security.core.userdetails.User principal = (org.springframework.security.core.userdetails.User) context.getAuthentication().getPrincipal();
+            final org.springframework.security.core.userdetails.User principal = (org.springframework.security.core.userdetails.User) context
+                    .getAuthentication().getPrincipal();
             return principal.getUsername();
         } else {
             return null;

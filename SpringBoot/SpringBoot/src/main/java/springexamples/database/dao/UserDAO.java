@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface UserDAO extends JpaRepository<User, Long> {
 
-User findByEmail(String email);
+    User findByEmail(String email);
 
 }

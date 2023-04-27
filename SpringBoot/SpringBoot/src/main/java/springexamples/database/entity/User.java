@@ -5,8 +5,6 @@ import java.util.List;
 
 import jakarta.persistence.*;
 
-
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;

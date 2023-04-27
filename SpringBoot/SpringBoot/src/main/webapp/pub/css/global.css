@@ -1,7 +1,5 @@
 /* this file is really for css that's on all pages */
-body {
-    font-family: 'Montserrat' !important;
-}
+
 /* There’s a style tab over in the inspect element where you can click on and off css to see what the */
 .bg-light-color {
     background-color: #dfdfdf;

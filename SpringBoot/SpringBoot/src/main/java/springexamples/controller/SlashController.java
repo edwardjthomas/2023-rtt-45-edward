@@ -48,7 +48,7 @@ public class SlashController {
     // an example of @RequestMapping with Multiple URIs
     // keep an eye on using the {} on the value = to indicate the multiple names
     // users can input to get you to that same page
-    @RequestMapping(value = {"/index", "/", "/index.html"}, method = RequestMethod.GET)
+    @RequestMapping(value = { "/index", "/", "/index.html" }, method = RequestMethod.GET)
     public ModelAndView index() {
         log.debug("In the index controller method.");
         ModelAndView response = new ModelAndView("index");
@@ -127,7 +127,8 @@ public class SlashController {
         // they both finish before the controller method finishes
         userRoleDAO.save(userRole);
 
-        // very important that this line of code is after both the user and user role is saved to the database (4/11) in conjunction with AuthenticatedUserService
+        // very important that this line of code is after both the user and user role is
+        // saved to the database (4/11) in conjunction with AuthenticatedUserService
         // authenticate the user that was just created
         // session that was mention above is used here
         authenticatedUserService.changeLoggedInUsername(session, form.getEmail(), form.getPassword());

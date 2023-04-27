@@ -21,12 +21,14 @@
                         <c:set var="subTotalPrice" value='${orderQuantityPrice + subTotalPrice}'></c:set>
 
                         <div class="card border-primary mb-3" style="max-width: 200px; margin: 5px;">
-                            <div class="card-header"><a href="/details/${ord.id}">${ord.artist_name}'s ${ord.type} Commissions</a> x${ord.quantity}</div>
+                            <div class="card-header"><a href="/details/${ord.id}">${ord.artist_name}'s ${ord.type}
+                                    Commissions</a> x${ord.quantity}</div>
                             <img src="${ord.image_Url}" class="card-img-top" alt="${ord.image_Url}">
 
                             <div class="card-body">
                                 <h5 class="card-title">$${orderQuantityPrice}</h5>
-                                <p><a href="/order/removefromcart?serviceId=${ord.id}" class="btn btn-primary btn-sm">Remove from Cart</a></p>
+                                <p><a href="/order/removefromcart?serviceId=${ord.id}"
+                                        class="btn btn-primary btn-sm">Remove from Cart</a></p>
                             </div>
                         </div>
 

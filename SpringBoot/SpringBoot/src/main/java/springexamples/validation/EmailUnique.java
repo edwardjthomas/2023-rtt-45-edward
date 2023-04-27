@@ -16,9 +16,9 @@ import java.lang.annotation.Target;
 
 @Documented
 @Constraint(validatedBy = EmailUniqueImpl.class) // it's being implemented by the other class in the folder
-@Target({ElementType.METHOD, ElementType.FIELD})
+@Target({ ElementType.METHOD, ElementType.FIELD })
 @Retention(RetentionPolicy.RUNTIME) // only to last during the run time
-public @interface EmailUnique {  // @interface is saying it's a new annotation
+public @interface EmailUnique { // @interface is saying it's a new annotation
 
     String message() default "{UserEmailUnique}";
 

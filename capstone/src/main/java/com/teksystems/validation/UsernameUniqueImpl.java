@@ -40,7 +40,8 @@ public class UsernameUniqueImpl implements ConstraintValidator<UsernameUnique, S
     }
 
     public boolean existsExample2(String value) {
-        // in this method we have used a spring data jpa function to see if the email exists
+        // in this method we have used a spring data jpa function to see if the email
+        // exists
         boolean exists = userDAO.existsByUsername(value);
         return !exists;
     }

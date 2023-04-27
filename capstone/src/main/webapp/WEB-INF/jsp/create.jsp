@@ -100,7 +100,8 @@
                     </div>
 
                     <div class="col-6 offset-md-3">
-                        <p class="text-secondary fst-italic"><small>I would like to opt in to the mailing list for Bufu Guild Commissions:</small></p>
+                        <p class="text-secondary fst-italic"><small>I would like to opt in to the mailing list for Bufu
+                                Guild Commissions:</small></p>
                         <div class="form-check form-check-inline mb-3">
                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
                                 value="option1">
