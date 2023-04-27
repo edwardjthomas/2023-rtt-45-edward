@@ -9,6 +9,19 @@
             <div class="row justify-content-center">
                 <h1 class="text-center">Login</h1>
                 <form method="POST" action="/login/loginpost">
+                    <c:if test="${param['error'] != null}">
+                        <section class="pt-5 bg-light-color">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-sm-10 col-md-7 col-xl-5">
+                                        <div class="alert alert-danger" role="alert">
+                                            Invalid Username or Password
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </c:if>
                     <div class="col-6 offset-md-3">
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" name="username" placeholder="Username">

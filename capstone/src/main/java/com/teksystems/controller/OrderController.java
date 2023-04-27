@@ -7,6 +7,7 @@ import com.teksystems.formbeans.OrdersFormBean;
 import com.teksystems.security.AuthenticatedUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -25,6 +26,7 @@ import java.util.Map;
 @Slf4j // Slf4j allows for the log.info() to work
 @Controller
 @RequestMapping("/order")
+@PreAuthorize("hasAuthority('USER')")
 public class OrderController {
 
     @Autowired
